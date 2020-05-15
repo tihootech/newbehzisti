@@ -1,0 +1,35 @@
+{
+	"username":"نام کاربری",
+	"password":"رمزعبور",
+	"":"",
+	"muid":"کدد مددجویی",
+	"first_name":"نام",
+	"last_name":"نام خانوادگی",
+	"national_code":"کدملی",
+	"birth_date":"تاریخ تولد",
+	"gender":"جنسیت",
+	"education":"مقطع تحصیلی",
+	"field_of_study":"رشته تحصیلی",
+	"academic_orientation":"گرایش تحصیلی",
+	"skill":"مهارت",
+	"address":"آدرس",
+	"mobile":"موبایل",
+	"father_name":"نام پدر",
+	"insurance_number":"شماره بیمه",
+	"marital_status":"وضعیت تاهل",
+	"":"",
+	"":"",
+	"":"",
+
+
+
+
+
+
+	"USER_EXISTS":"کاربری با این نام قبلا در سیستم ثبت شده است.",
+	"USER_DOSNT_EXISTS":"کاربری با این نام یافت نشد.",
+	"CANT_SIGNUP_WITH_THIS_ACCOUNT":"با این حساب کاربری نمیتوان ثبت نام کرد.",
+	"ACC_CREATED_SUCCESSFULLY":"حساب کاربری با موفقیت ایجاد شد.",
+	"":"",
+	"":""
+}

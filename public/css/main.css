@@ -1,0 +1,47 @@
+@font-face {
+	font-family: Sahel;
+	src: url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.eot');
+	src: url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.eot?#iefix') format('embedded-opentype'),
+	url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.woff') format('woff'),
+	url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.ttf') format('truetype');
+	font-weight: normal;
+}
+
+body {
+	font-family: Sahel;
+	direction: rtl;
+	text-align: right;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+	font-family: Tanha;
+} */
+
+.btn-round {
+	border-radius: 10px;
+}
+
+.main-banner, .top-banner {
+	background-size: cover;
+	background-image: url('../img/bg.jpg');
+}
+.main-banner > .banner-container {
+	height:100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.banner-container > .card {
+	width: 85%;
+}
+
+.w-20 {
+	width: 20%;
+}
+
+.border-light {
+	border-color: rgba(255,255,255,0.5);
+}
