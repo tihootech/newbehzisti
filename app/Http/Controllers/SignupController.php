@@ -13,6 +13,7 @@ use App\Person;
 use App\JobApply;
 use App\LoanApply;
 use App\InsuranceApply;
+use App\Organ;
 
 class SignupController extends Controller
 {
@@ -96,7 +97,7 @@ class SignupController extends Controller
             'national_code' => ['required', new NationalCodeRule, 'unique:people,national_code,'.$id],
             'address' => 'required|string',
             'postal_code' => 'required|string|digits:10',
-            'mobile' => 'required|string|digits:11|unique:people,national_code,'.$id,
+            'mobile' => 'required|string|digits:11|unique:people,mobile,'.$id,
             'birth_date' => new PersianDateRule,
             'birth_certificate_number' => 'required|string',
             'reference' => 'nullable',
@@ -230,6 +231,60 @@ class SignupController extends Controller
         $person->update($person_data);
 
         return redirect()->route('signup', [$type, $step+1])->withMessage(__('APPLIED_SUCCESSFULLY'));
+    }
+
+    public function organ_form()
+    {
+        return view('signup.organ_signup_form');
+    }
+
+    public function organ_register(Request $request)
+    {
+        $data = $request->validate([
+            'in_charge_first_name' => 'required|string',
+            'in_charge_last_name' => 'required|string',
+            'city' => Rule::in( defaults('city') ),
+            'national_code' => ['required', new NationalCodeRule, 'unique:organs,national_code'],
+            'address' => 'required|string',
+            'postal_code' => 'required|string|digits:10',
+            'phone' => 'required|string|unique:organs,phone',
+            'birth_date' => new PersianDateRule,
+            'educations' => Rule::in( defaults('education') ),
+            'workshop_location' => 'required|string',
+            'workshop_title' => 'required|string',
+            'service' => Rule::in( defaults() ),
+            'shifts' => Rule::in( defaults() ),
+            'shift_hours' => 'required|string',
+            'meal' => Rule::in( defaults('meal') ),
+            'payment_amount' => Rule::in( defaults('payment_amount') ),
+            'offered_payment' => 'nullable|integer',
+            'madadjus_insurance' => Rule::in( defaults() ),
+            'full_insurance' => Rule::in( defaults() ),
+            'username' => 'required|string|unique:users,name|min:4',
+            'password' => 'required|string|min:4',
+        ]);
+
+        $user = User::create([
+            'name' => $request->username,
+            'password' => bcrypt($request->password),
+            'type' => 'organ'
+        ]);
+
+        unset($data['username']);
+        unset($data['password']);
+        $data['uid'] = rs(8);
+        $data['user_id'] = $user->id;
+        $data['state'] = 'کرمانشاه';
+
+        $organ = Organ::create($data);
+
+        return redirect()->route('organ.finished', $organ->uid)->withMessage(__('APPLIED_SUCCESSFULLY'));
+    }
+
+    public function organ_finished($uid)
+    {
+        $organ = Organ::where('uid', $uid)->firstOrFail();
+        return view('signup.organ_signup_finished', compact('uid'));
     }
 
 }

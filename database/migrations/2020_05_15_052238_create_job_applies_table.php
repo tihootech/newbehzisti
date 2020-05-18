@@ -23,7 +23,7 @@ class CreateJobAppliesTable extends Migration
             $table->string('vehicle_type');
 
 
-            $table->boolean('finished')->default(0);
+            $table->smallInteger('status')->default(1); // 1:fresh, 2:edited, 3:rejected, 4:confirmed
             $table->timestamps();
         });
     }

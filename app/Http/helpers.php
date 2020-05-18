@@ -87,9 +87,10 @@ function random_rgba($opacity=null)
 }
 
 
-function defaults($key)
+function defaults($key=0)
 {
     $arr = [
+        0 => ['دارد', 'ندارد'],
         'city' => [
 			'اسلام آباد غرب',
 			'پاوه',
@@ -185,12 +186,27 @@ function defaults($key)
 			'کارفرمایی',
 			'خوداشتغالی',
 		],
+        'workshop_location' => [
+			'شهر',
+			'روستا',
+		],
+        'payment_amount' => [
+			'دستمزد مصوب اداره کار',
+			'توافقی',
+		],
         'vehicle_type' => [
 			'ندارم',
 			'موتور',
 			'سواری',
 			'وانت',
 			'سایر',
+		],
+        'meal' => [
+			'ندارد',
+			'صبحانه',
+			'نهار ',
+			'شام',
+			'میان وعده',
 		],
     ];
     return $arr[$key] ?? [];
