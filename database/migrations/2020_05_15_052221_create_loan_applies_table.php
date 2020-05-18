@@ -24,6 +24,7 @@ class CreateLoanAppliesTable extends Migration
             $table->string('plan_title');
             $table->string('required_finance');
             $table->string('suggested_bank');
+            $table->string('insurance_number')->nullable();
 
             $table->boolean('finished')->default(0);
             $table->timestamps();

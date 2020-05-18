@@ -1,14 +1,21 @@
 <div class="text-center">
 
+	<p class="text-danger">
+		<b>*</b>
+		برای انجام این عملیات باید حتما حساب کاربری داشته باشید. شما میتوانید یا حساب کاربری جدید بسازید یا وارد حساب کاربری که قبلا ساختید بشوید
+	</p>
 	@auth
-		<a href="{{route('signup', [$type, 2])}}" class="btn btn-warning btn-round m-1">
+		<a href="{{route('signup', [$type, 2])}}" class="btn btn-danger btn-round m-1">
 			ورود به عنوان {{user('name')}}
 		</a>
-	@else
-		<a href="#user-pass-form" data-toggle="collapse" class="btn btn-warning btn-round m-1">
-			قبلا حساب کاربری ایجاد کردم
-		</a>
 	@endauth
+	<a href="#user-pass-form" data-toggle="collapse" class="btn btn-warning btn-round m-1">
+		@auth
+			ورود با حساب کاربری جدید
+		@else
+			قبلا حساب کاربری ایجاد کردم
+		@endauth
+	</a>
 	<a href="#new-acc-form" data-toggle="collapse" class="btn btn-primary btn-round m-1">
 		ایجاد حساب کاربری و ثبت نام
 	</a>

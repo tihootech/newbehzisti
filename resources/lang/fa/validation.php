@@ -154,6 +154,9 @@ return [
         'postcode'=> 'کدپستی',
         'warden_national_code'=> 'کدملی سرپرست',
         'file'=> 'کدملی سرپرست',
+        'payed'=> 'مبلغ مستمری',
+        'mortgage'=> 'مبلغ رهن',
+        'rent'=> 'مبلغ کرایه',
     ],
 
 ];

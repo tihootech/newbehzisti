@@ -44,17 +44,16 @@ class CreatePeopleTable extends Migration
             $table->text('information')->nullable();
 
             $table->string('payed')->nullable();
-            $table->string('insurance_number')->nullable();
-            $table->string('activity_section');
-            $table->string('housing_status');
+            $table->string('activity_section')->nullable();
+            $table->string('housing_status')->nullable();
             $table->string('mortgage')->nullable();
             $table->string('rent')->nullable();
 
             // file related
-            $table->string('file_domain');
+            $table->string('file_domain')->nullable();;
             $table->string('file_status')->nullable();
-            $table->string('disability_type');
-            $table->string('disability_level');
+            $table->string('disability_type')->nullable();;
+            $table->string('disability_level')->nullable();;
             $table->timestamps();
         });
     }

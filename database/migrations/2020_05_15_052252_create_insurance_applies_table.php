@@ -22,6 +22,7 @@ class CreateInsuranceAppliesTable extends Migration
             $table->string('license_system');
             $table->string('plan_title');
             $table->string('insurance_status');
+            $table->string('insurance_number');
             $table->string('workshop_name');
             $table->string('monthly_amount');
             $table->string('shaba');

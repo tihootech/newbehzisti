@@ -26,7 +26,8 @@ body {
 	background-image: url('../img/bg.jpg');
 }
 .main-banner > .banner-container {
-	height:100vh;
+	min-height:100vh;
+	padding: 50px 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -44,4 +45,24 @@ body {
 
 .border-light {
 	border-color: rgba(255,255,255,0.5);
+}
+
+.custom-control-label::before, .custom-control-label::after {
+	left: unset;
+}
+
+.custom-control-label > span {
+	padding-right: 25px;
+}
+
+.rahgiri {
+	text-align: center;
+	border: 2px solid #E3342F;
+	padding: 10px 50px;
+}
+
+.rahgiri-char {
+	display: inline-block;
+	margin: 0 3px;
+	font-size: 1.25em;
 }
