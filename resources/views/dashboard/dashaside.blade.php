@@ -9,8 +9,18 @@
 	</div>
 	<ul class="app-menu">
 		<li>
-			<a class="app-menu__item active" href="dashboard.html"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">داشبورد</span></a>
+			<a class="app-menu__item @if(rn() == 'home') active @endif" href="{{route('home')}}">
+				<i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">داشبورد</span>
+			</a>
 		</li>
+
+		@master
+			<li>
+				<a class="app-menu__item @if(rn() == 'expert.index') active @endif" href="{{route('expert.index')}}">
+					<i class="app-menu__icon fa fa-user-secret"></i><span class="app-menu__label"> مسئولین شهرستان </span>
+				</a>
+			</li>
+		@endmaster
 
 
 		{{-- <li class="treeview">
@@ -29,9 +39,6 @@
 					<a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a>
 				</li>
 			</ul>
-		</li>
-		<li>
-			<a class="app-menu__item" href="charts.html"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Charts</span></a>
 		</li> --}}
 
 	</ul>

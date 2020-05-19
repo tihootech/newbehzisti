@@ -21,9 +21,20 @@ function user($p=null)
     return $u ? ($p ? $u->$p : $u) : null;
 }
 
+function is($type)
+{
+    $u = auth()->user();
+    return $u && $u->type == $type;
+}
+
 function active($path)
 {
     return request()->fullUrl() == url($path);
+}
+
+function rn()
+{
+    return request()->route()->getName();
 }
 
 function expanded($array)

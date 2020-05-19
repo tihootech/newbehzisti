@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Main CSS-->
         <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('css/pdp.css')}}" />
         <!-- Font-icon css-->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
@@ -21,11 +22,16 @@
         </main>
         <!-- Essential javascripts for application to work-->
         <script src="{{asset('dashboard/js/jquery-3.3.1.min.js')}}"></script>
+        <script src="{{asset("dashboard/js/jq-ui.js")}}"></script>
         <script src="{{asset('dashboard/js/popper.min.js')}}"></script>
         <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('dashboard/js/main.js')}}"></script>
         <!-- The javascript plugin to display page loading on top-->
         <script src="{{asset('dashboard/js/plugins/pace.min.js')}}"></script>
+        <script src="{{asset("dashboard/js/plugins/sweetalert.min.js")}}"></script>
+        <script src="{{asset("dashboard/js/plugins/select2.min.js")}}"></script>
+        <script src="{{asset("dashboard/js/cats-treeview.js")}}"></script>
+        <script src="{{asset("js/pdp.min.js")}}"></script>
         <!-- Page specific javascripts-->
         <script type="text/javascript" src="{{asset('dashboard/js/plugins/chart.js')}}"></script>
     </body>
