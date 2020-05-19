@@ -18,7 +18,7 @@ function date_picker_date($income)
 function user($p=null)
 {
     $u = auth()->user();
-    return $p ? $u->$p : $u;
+    return $u ? ($p ? $u->$p : $u) : null;
 }
 
 function active($path)

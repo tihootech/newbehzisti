@@ -1,5 +1,5 @@
 @font-face {
-	font-family: Sahel;
+	font-family: 'Sahel';
 	src: url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.eot');
 	src: url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.eot?#iefix') format('embedded-opentype'),
 	url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.woff') format('woff'),
@@ -8,7 +8,7 @@
 }
 
 body {
-	font-family: Sahel;
+	font-family: 'Sahel';
 	direction: rtl;
 	text-align: right;
 }
@@ -18,7 +18,8 @@ body {
 } */
 
 .btn-round {
-	border-radius: 10px;
+	border-radius: 21px;
+	padding: 15 30px !important;
 }
 
 .main-banner, .top-banner {
