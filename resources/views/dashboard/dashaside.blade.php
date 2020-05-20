@@ -17,10 +17,18 @@
 		@master
 			<li>
 				<a class="app-menu__item @if(rn() == 'expert.index') active @endif" href="{{route('expert.index')}}">
-					<i class="app-menu__icon fa fa-user-secret"></i><span class="app-menu__label"> مسئولین شهرستان </span>
+					<i class="app-menu__icon fa fa-user-secret"></i><span class="app-menu__label">  مسئولین شهرستان ها </span>
 				</a>
 			</li>
 		@endmaster
+
+		@admins
+			<li>
+				<a class="app-menu__item @if(rn() == 'organ.index') active @endif" href="{{route('organ.index')}}">
+					<i class="app-menu__icon fa fa-list"></i><span class="app-menu__label"> لیست کارفرمایان </span>
+				</a>
+			</li>
+		@endadmins
 
 
 		{{-- <li class="treeview">

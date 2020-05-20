@@ -15317,6 +15317,10 @@ input[type=number]::-webkit-inner-spin-button:after {
     min-width:200px;
 }
 
+.fixed-width th {
+    min-width: 125px;
+}
+
 /*******************************/
 /* RTL */
 /*******************************/

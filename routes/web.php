@@ -19,3 +19,4 @@ Route::post('wizard/{type}/{step}', 'SignupController@wizard')->name('wizard');
 
 // resources
 Route::resource('expert', 'ExpertController')->except('show');
+Route::resource('organ', 'OrganController')->only(['index', 'destroy']);
