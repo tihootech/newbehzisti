@@ -27,6 +27,11 @@ function is($type)
     return $u && $u->type == $type;
 }
 
+function nf($x)
+{
+    return number_format($x);
+}
+
 function active($path)
 {
     return request()->fullUrl() == url($path);
@@ -39,14 +44,14 @@ function rn()
 
 function expanded($array)
 {
-    $query = str_replace(request()->url(), '',request()->fullUrl());
+    // $query = str_replace(request()->url(), '',request()->fullUrl());
     $path = request()->path();
-    return in_array($path.$query,$array);
+    return in_array(url($path),$array);
 }
 
 function short($string, $n=100)
 {
-    return strlen($string) > $n ? mb_substr($string, 0, $n).'...' : $string;
+    return $string ? (strlen($string) > $n ? mb_substr($string, 0, $n).'...' : $string) : '-';
 }
 
 function class_name($input, $prefix='App\\')

@@ -6,12 +6,14 @@
 @section('main')
 
 	<div class="tile">
-		<div class="table-responsive">
+
+		<div class="table-responsive mb-3">
 			<table class="table table-sm table-bordered table-striped table-hover fixed-width text-center">
 				<thead>
 					<tr>
 						<th> ردیف </th>
-						<th> نام مسئول </th>
+						<th> وضعیت </th>
+						<th style="min-width:200px"> نام مسئول </th>
 						<th> @lang('phone') </th>
 						<th> استان </th>
 						<th> @lang('city') </th>
@@ -19,7 +21,7 @@
 						<th> @lang('birth_date') </th>
 						<th> @lang('educations') </th>
 						<th> @lang('workshop_location') </th>
-						<th> نام کارگاه </th>
+						<th style="min-width:200px"> نام کارگاه </th>
 						<th> @lang('postal_code') </th>
 						<th style="min-width:175px"> @lang('service') </th>
 						<th> @lang('shifts') </th>
@@ -36,8 +38,19 @@
 					@foreach ($organs as $r => $organ)
 						<tr>
 							<th> {{$r+1}} </th>
+							<td class="
+								@if($organ->status == 1)
+									bg-warning
+								@elseif($organ->status == 2)
+									bg-info text-light
+								@elseif($organ->status == 3)
+									bg-danger text-light
+								@else bg-success text-light
+							@endif">
+								{{$organ->stat}}
+							</td>
 							<td> {{$organ->full_name}} </td>
-							<td> {{$organ->phone}} </td>
+							<td dir="ltr"> {{$organ->phone}} </td>
 							<td> {{$organ->state}} </td>
 							<td> {{$organ->city}} </td>
 							<td> {{$organ->national_code}} </td>
@@ -51,7 +64,7 @@
 							<td> {{$organ->shift_hours}} </td>
 							<td> {{$organ->meal}} </td>
 							<td> {{$organ->payment_amount}} </td>
-							<td> {{$organ->offered_payment}} </td>
+							<td> {{nf($organ->offered_payment)}} ریال </td>
 							<td> {{$organ->madadjus_insurance}} </td>
 							<td> {{$organ->full_insurance}} </td>
 							<td>
@@ -68,5 +81,7 @@
 				</tbody>
 			</table>
 		</div>
+
+		{{$organs->links()}}
 	</div>
 @endsection

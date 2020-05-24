@@ -17,7 +17,7 @@ class OrganController extends Controller
 
     public function index()
     {
-        $organs = Organ::all();
+        $organs = Organ::latest()->paginate(12);
         return view('dash.organ.index', compact('organs'));
     }
 

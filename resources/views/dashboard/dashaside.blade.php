@@ -28,26 +28,35 @@
 					<i class="app-menu__icon fa fa-list"></i><span class="app-menu__label"> لیست کارفرمایان </span>
 				</a>
 			</li>
+
+			@php
+				$hrefs = [route('madadjus', 'job'), route('madadjus', 'loan'), route('madadjus', 'insurance')];
+			@endphp
+			<li class="treeview @if(expanded($hrefs)) is-expanded @endif">
+				<a class="app-menu__item" href="#" data-toggle="treeview">
+					<i class="app-menu__icon fa fa-users"></i>
+					<span class="app-menu__label"> لیست مددجویان </span>
+					<i class="treeview-indicator fa fa-angle-left"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li>
+						<a class="treeview-item @if(active($hrefs[0])) active @endif" href="{{$hrefs[0]}}">
+							<i class="icon fa fa-circle-o"></i> جویای شغل
+						</a>
+					</li>
+					<li>
+						<a class="treeview-item @if(active($hrefs[1])) active @endif" href="{{$hrefs[1]}}">
+							<i class="icon fa fa-circle-o"></i> متقاضی وام
+						</a>
+					</li>
+					<li>
+						<a class="treeview-item @if(active($hrefs[2])) active @endif" href="{{$hrefs[2]}}">
+							<i class="icon fa fa-circle-o"></i> بیمه خویش فرمائی و کارفرمائی
+						</a>
+					</li>
+				</ul>
+			</li>
 		@endadmins
-
-
-		{{-- <li class="treeview">
-			<a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">UI Elements</span><i class="treeview-indicator fa fa-angle-left"></i></a>
-			<ul class="treeview-menu">
-				<li>
-					<a class="treeview-item" href="bootstrap-components.html"><i class="icon fa fa-circle-o"></i> Bootstrap Elements</a>
-				</li>
-				<li>
-					<a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a>
-				</li>
-				<li>
-					<a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Cards</a>
-				</li>
-				<li>
-					<a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a>
-				</li>
-			</ul>
-		</li> --}}
 
 	</ul>
 </aside>

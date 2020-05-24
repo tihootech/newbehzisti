@@ -30,8 +30,11 @@ class SignupController extends Controller
         }
 		if ($step > 1) {
 			if (!$user) {
-				return back()->withError('باید وارد حساب کاربری خود شوید.');
+				return back()->withError(__('YOU_NEED_TO_LOGIN'));
 			}
+            if ($user->type != 'user') {
+                return back()->withError(__('CANT_SIGNUP_WITH_THIS_ACCOUNT', ['username' => $user->name, 'access' => $user->access]));
+            }
 		}
     	return view('signup', compact('type', 'step', 'person', 'apply'));
     }

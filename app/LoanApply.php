@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class LoanApply extends Model
+class LoanApply extends Apply
 {
-    protected $guarded = ['id'];
+    //
 }

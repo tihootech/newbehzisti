@@ -35,6 +35,11 @@
 	//inits
     $('[title]').tooltip();
     $('[data-toggle="popover"]').popover();
+    $('[data-content]').popover({
+		placement : 'top',
+		html : true,
+		trigger : 'hover'
+	});
 	// $('.pdp').persianDatepicker();
 	// $('.select2').select2({
     //    width: '100%',
