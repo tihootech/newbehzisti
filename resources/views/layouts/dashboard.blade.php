@@ -25,14 +25,14 @@
         <script src="{{asset("dashboard/js/jq-ui.js")}}"></script>
         <script src="{{asset('dashboard/js/popper.min.js')}}"></script>
         <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('dashboard/js/main.js')}}"></script>
         <!-- The javascript plugin to display page loading on top-->
         <script src="{{asset('dashboard/js/plugins/pace.min.js')}}"></script>
         <script src="{{asset("dashboard/js/plugins/sweetalert.min.js")}}"></script>
         <script src="{{asset("dashboard/js/plugins/select2.min.js")}}"></script>
         <script src="{{asset("dashboard/js/cats-treeview.js")}}"></script>
         <script src="{{asset("js/pdp.min.js")}}"></script>
-        <!-- Page specific javascripts-->
         <script type="text/javascript" src="{{asset('dashboard/js/plugins/chart.js')}}"></script>
+        <!-- Page specific javascripts-->
+        <script src="{{asset('dashboard/js/main.js')}}"></script>
     </body>
 </html>

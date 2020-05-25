@@ -24,3 +24,4 @@ Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.
 // resources
 Route::resource('expert', 'ExpertController')->except('show');
 Route::resource('organ', 'OrganController')->only(['index', 'destroy']);
+Route::resource('solicit', 'SolicitController');

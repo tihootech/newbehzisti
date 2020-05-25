@@ -41,9 +41,16 @@
 		trigger : 'hover'
 	});
 	// $('.pdp').persianDatepicker();
-	// $('.select2').select2({
-    //    width: '100%',
-    // });
+	$('.select2').select2({
+       width: '100%',
+    });
+
+	// select all
+	$(".select-all").click(function(){
+		var id = $(this).data('id');
+		$("#"+id+" > option").prop("selected","selected");// Select All Options
+		$("#"+id+"").trigger("change");// Trigger change to select 2
+	});
 
 	//are-you-sures
 	$('.delete, .danger').click(function(){

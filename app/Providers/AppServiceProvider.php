@@ -27,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('master', function () {
             return is('master');
         });
+        Blade::if('organ', function () {
+            return is('organ');
+        });
         Blade::if('admins', function () {
             return is('master') || is('expert');
         });

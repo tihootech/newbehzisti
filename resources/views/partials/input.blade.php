@@ -11,8 +11,15 @@
 
 	@if ($type == 'select')
 
-		<select class="form-control" name="{{$name}}" id="{{$name}}" @if($required) required @endif>
-			<option value=""> -- انتخاب کنید -- </option>
+		<select id="{{$name}}"
+			class="@isset($multiple) select2 @else form-control @endisset"
+			@isset($multiple) multiple @endisset
+			name="{{isset($multiple) ? $name.'[]' : $name}}"
+			@if($required) required @endif>
+
+			@unless (isset($multiple))
+				<option value=""> -- انتخاب کنید -- </option>
+			@endunless
 			@foreach ($options as $option)
 				<option @if($val == $option) selected @endif>{{$option}}</option>
 			@endforeach
@@ -33,6 +40,12 @@
 
 	@isset($more_info)
 		<small class="text-muted"> {{$more_info}} </small>
+	@endisset
+
+	@isset($select_all)
+		<div class="mt-1">
+			<a href="#" class="select-all" data-id="{{$name}}"> انتخاب همه موارد </a>
+		</div>
 	@endisset
 
 </div>

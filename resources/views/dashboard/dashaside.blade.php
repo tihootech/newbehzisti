@@ -58,5 +58,13 @@
 			</li>
 		@endadmins
 
+		@organ
+			<li>
+				<a class="app-menu__item @if(rn() == 'solicit.create') active @endif" href="{{route('solicit.create')}}">
+					<i class="app-menu__icon fa fa-address-book-o"></i><span class="app-menu__label"> درخواست مددجو </span>
+				</a>
+			</li>
+		@endorgan
+
 	</ul>
 </aside>
