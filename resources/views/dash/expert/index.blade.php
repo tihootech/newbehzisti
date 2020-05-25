@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="tile">
-		<table class="table table-bordered table-striped table-hover">
+		<table class="table table-sm table-bordered table-striped table-hover">
 			<thead>
 				<tr>
 					<th> ردیف </th>

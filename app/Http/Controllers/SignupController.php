@@ -14,6 +14,7 @@ use App\JobApply;
 use App\LoanApply;
 use App\InsuranceApply;
 use App\Organ;
+use App\Expert;
 
 class SignupController extends Controller
 {
@@ -301,6 +302,13 @@ class SignupController extends Controller
         $class = $type == 'organ' ? class_name($type) : class_name($type).'Apply';
         if (class_exists($class)) {
             $object = $class::findOrFail($id);
+            if (!is('master')) {
+                $city = $object->person->city ?? $object->city;
+                $expert = Expert::where('user_id', user('id'))->firstOrFail();
+                if ($city != $expert->city) {
+                    return back()->withError(__('ERROR'));
+                }
+            }
             $object->status = 4;
             $object->rejection_reason = null;
             $object->save();
@@ -316,6 +324,13 @@ class SignupController extends Controller
         $class = $type == 'organ' ? class_name($type) : class_name($type).'Apply';
         if (class_exists($class)) {
             $object = $class::findOrFail($id);
+            if (!is('master')) {
+                $city = $object->person->city ?? $object->city;
+                $expert = Expert::where('user_id', user('id'))->firstOrFail();
+                if ($city != $expert->city) {
+                    return back()->withError(__('ERROR'));
+                }
+            }
             $object->status = 3;
             $object->rejection_reason = request('rejection_reason');
             $object->save();

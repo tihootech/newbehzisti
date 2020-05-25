@@ -64,6 +64,7 @@
 						@endif
 
 						<th style="min-width:200px"> @lang('information') </th>
+						<th> تاریخ درخواست </th>
 						<th> عملیات </th>
 					</tr>
 				</thead>
@@ -82,27 +83,27 @@
 							@endif">
 								{{$apply->stat}}
 							</td>
-							<td> {{$apply->person->full_name ?? '-'}} </td>
-							<td> {{$apply->person->city ?? '-'}} </td>
-							<td> {{$apply->person->lifestyle ?? '-'}} </td>
-							<td data-content="{{$apply->person->address}}"> {{short($apply->person->address, 20)}} </td>
-							<td> {{$apply->person->postal_code ?? '-'}} </td>
-							<td> {{$apply->person->national_code ?? '-'}} </td>
-							<td> {{$apply->person->father_name ?? '-'}} </td>
-							<td> {{$apply->person->birth_certificate_number ?? '-'}} </td>
-							<td> {{$apply->person->birth_date ?? '-'}} </td>
-							<td> {{$apply->person->reference ?? '-'}} </td>
-							<td> {{$apply->person->madadkar_name ?? '-'}} </td>
-							<td> {{$apply->person->marital_status ?? '-'}} </td>
-							<td> {{$apply->person->family_members ?? '-'}} </td>
-							<td> {{$apply->person->gender ?? '-'}} </td>
-							<td> {{$apply->person->education ?? '-'}} </td>
-							<td> {{$apply->person->field_of_study ?? '-'}} </td>
-							<td> {{$apply->person->academic_orientation ?? '-'}} </td>
-							<td> {{$apply->person->warden_type ?? '-'}} </td>
-							<td> {{$apply->person->health_status ?? '-'}} </td>
-							<td> {{$apply->person->disables_in_family ?? '-'}} </td>
-							<td dir="ltr"> {{$apply->person->mobile ?? '-'}} </td>
+							<td> {{$apply->full_name ?? '-'}} </td>
+							<td> {{$apply->city ?? '-'}} </td>
+							<td> {{$apply->lifestyle ?? '-'}} </td>
+							<td data-content="{{$apply->address}}"> {{short($apply->address, 20)}} </td>
+							<td> {{$apply->postal_code ?? '-'}} </td>
+							<td> {{$apply->national_code ?? '-'}} </td>
+							<td> {{$apply->father_name ?? '-'}} </td>
+							<td> {{$apply->birth_certificate_number ?? '-'}} </td>
+							<td> {{$apply->birth_date ?? '-'}} </td>
+							<td> {{$apply->reference ?? '-'}} </td>
+							<td> {{$apply->madadkar_name ?? '-'}} </td>
+							<td> {{$apply->marital_status ?? '-'}} </td>
+							<td> {{$apply->family_members ?? '-'}} </td>
+							<td> {{$apply->gender ?? '-'}} </td>
+							<td> {{$apply->education ?? '-'}} </td>
+							<td> {{$apply->field_of_study ?? '-'}} </td>
+							<td> {{$apply->academic_orientation ?? '-'}} </td>
+							<td> {{$apply->warden_type ?? '-'}} </td>
+							<td> {{$apply->health_status ?? '-'}} </td>
+							<td> {{$apply->disables_in_family ?? '-'}} </td>
+							<td dir="ltr"> {{$apply->mobile ?? '-'}} </td>
 
 							@if ($type == 'job')
 								<td data-content="{{$apply->skill_type}}"> {{short($apply->skill_type, 20)}} </td>
@@ -132,7 +133,8 @@
 								<td> {{$apply->bank}} </td>
 							@endif
 
-							<td data-content="{{$apply->person->information}}"> {{short($apply->person->information, 20)}} </td>
+							<td data-content="{{$apply->information}}"> {{short($apply->information, 20)}} </td>
+							<td> {{date_picker_date($apply->created_at)}} </td>
 							<td>
 								<form class="d-inline" action="{{route('apply.destroy', [$type, $apply->id])}}" method="post">
 									@method('DELETE')

@@ -103,7 +103,7 @@ class ExpertSeeder extends Seeder
         foreach ($arr as $data) {
             $user = User::create([
                 'name' => $data['national_code'],
-                'password' => $data['national_code'],
+                'password' => bcrypt($data['national_code']),
                 'type' => 'expert'
             ]);
             $data['user_id'] = $user->id;
