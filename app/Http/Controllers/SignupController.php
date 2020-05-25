@@ -17,6 +17,12 @@ use App\Organ;
 
 class SignupController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['accept', 'reject']);
+        $this->middleware('admins')->only(['accept', 'reject']);
+    }
+
     public function form($type, $step=1)
     {
 		$user = user();
@@ -288,6 +294,35 @@ class SignupController extends Controller
     {
         $organ = Organ::where('uid', $uid)->firstOrFail();
         return view('signup.organ_signup_finished', compact('uid'));
+    }
+
+    public function accept($type, $id)
+    {
+        $class = $type == 'organ' ? class_name($type) : class_name($type).'Apply';
+        if (class_exists($class)) {
+            $object = $class::findOrFail($id);
+            $object->status = 4;
+            $object->rejection_reason = null;
+            $object->save();
+            return back()->withMessage( __('REQUEST_ACCEPTED') );
+        }else {
+            abort(404);
+        }
+    }
+
+    public function reject($type, $id)
+    {
+        request()->validate(['rejection_reason'=>'required']);
+        $class = $type == 'organ' ? class_name($type) : class_name($type).'Apply';
+        if (class_exists($class)) {
+            $object = $class::findOrFail($id);
+            $object->status = 3;
+            $object->rejection_reason = request('rejection_reason');
+            $object->save();
+            return back()->withMessage( __('REQUEST_ACCEPTED') );
+        }else {
+            abort(404);
+        }
     }
 
 }

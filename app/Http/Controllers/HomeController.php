@@ -3,26 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Organ;
+use App\JobApply;
+use App\LoanApply;
+use App\InsuranceApply;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        $actions = [];
+        if (is('admin')) {
+            $actions['job'] = JobApply::whereIn('status', [1,2])->get();
+            $actions['loan'] = LoanApply::whereIn('status', [1,2])->get();
+            $actions['insurance'] = InsuranceApply::whereIn('status', [1,2])->get();
+            $actions['organ'] = Organ::whereIn('status', [1,2])->get();
+        }
+        $actions_count = array_sum(array_map("count", $actions));
+        return view('home', compact('actions', 'actions_count'));
     }
 }

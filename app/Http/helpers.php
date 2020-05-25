@@ -24,6 +24,9 @@ function user($p=null)
 function is($type)
 {
     $u = auth()->user();
+    if ($type == 'admin') {
+        return $u && ($u->type == 'expert' || $u->type == 'master');
+    }
     return $u && $u->type == $type;
 }
 

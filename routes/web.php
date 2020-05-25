@@ -17,6 +17,8 @@ Route::get('ثبت-نام/{type}/{step?}', 'SignupController@form')->name('signu
 Route::post('wizard/{type}/{step}', 'SignupController@wizard')->name('wizard');
 Route::get('madadjus/{type}', 'MadadjuController@index')->name('madadjus');
 Route::delete('apply/{type}/{id}', 'MadadjuController@destroy')->name('apply.destroy');
+Route::post('apply/accept/{type}/{id}', 'SignupController@accept')->name('apply.accept');
+Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.reject');
 
 
 // resources

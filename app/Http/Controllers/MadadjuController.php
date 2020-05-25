@@ -30,7 +30,7 @@ class MadadjuController extends Controller
     {
         $class = class_name($type).'Apply';
         if (class_exists($class)) {
-            $object = $class::find($id);
+            $object = $class::findOrFail($id);
             Person::where('id', $object->person->id)->delete();
             User::where('id', $object->person->user_id)->delete();
             $object->delete();

@@ -5765,7 +5765,7 @@ button.close {
 
 .modal-header .close {
   padding: 1rem;
-  margin: -1rem -1rem -1rem auto;
+  margin: -1rem auto -1rem -1rem ;
 }
 
 .modal-title {
@@ -15320,6 +15320,26 @@ input[type=number]::-webkit-inner-spin-button:after {
 .fixed-width th {
     min-width: 125px;
 }
+
+/*******************************/
+/* Custom */
+/*******************************/
+
+.modal-summury > div {
+    padding: 5px 10px;
+}
+
+.modal-summury p {
+    margin: 0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.modal-summury p span {
+    color: #E3342F;
+}
+
 
 /*******************************/
 /* RTL */
