@@ -7,16 +7,16 @@
 
     @yield('title')
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/pdp.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}?v=2" rel="stylesheet">
+    <link href="{{ asset('css/pdp.css') }}?v=2" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}?v=2" rel="stylesheet">
 </head>
 <body>
 
     @yield('content')
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/pdp.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}?v=2"></script>
+    <script src="{{ asset('js/pdp.min.js') }}?v=2"></script>
+    <script src="{{ asset('js/main.js') }}?v=2"></script>
 </body>
 </html>
