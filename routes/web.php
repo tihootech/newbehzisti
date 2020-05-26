@@ -21,6 +21,9 @@ Route::post('apply/accept/{type}/{id}', 'SignupController@accept')->name('apply.
 Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.reject');
 
 
+// rahgiri
+Route::get('rahgiri', 'RahgiriController@rahgiri')->name('rahgiri');
+
 // introduce
 Route::get('introduce/{solicit}', 'IntroduceController@introduce_form')->name('introduce.form');
 Route::post('introduce/{solicit}', 'IntroduceController@introduce_action')->name('introduce.action');

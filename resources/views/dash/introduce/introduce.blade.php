@@ -15,7 +15,7 @@
             <div class="alert alert-info">
                 متاسفانه هیچ مددجویی با این مشخصات در سیستم پیدا نشد.
                 <hr>
-                <a href="#" class="btn btn-outline-dark"> جستجو بین تمام مددجویان </a>
+                <a href="{{route('madadjus', 'job')}}" class="btn btn-outline-dark"> جستجو بین تمام مددجویان </a>
             </div>
         @endif
 

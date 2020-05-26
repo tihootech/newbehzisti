@@ -56,6 +56,11 @@
 					</li>
 				</ul>
 			</li>
+			<li>
+				<a class="app-menu__item @if(rn() == 'rahgiri') active @endif" href="{{route('rahgiri')}}">
+					<i class="app-menu__icon fa fa-code"></i><span class="app-menu__label"> کدرهگیری </span>
+				</a>
+			</li>
 		@endadmins
 
 		@organ

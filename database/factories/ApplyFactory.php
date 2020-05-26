@@ -17,7 +17,7 @@ $factory->define(JobApply::class, function (Faker $faker) {
         'skill_type' => $faker->sentence(5),
         'interests' => $faker->sentence(),
         'vehicle_type' => $vihicles[array_rand($vihicles)],
-        'status' => rand(1,4)
+        'status' => 4
     ];
 });
 
@@ -32,7 +32,7 @@ $factory->define(LoanApply::class, function (Faker $faker) {
         'required_finance' => rand(1,16) * 2500000,
         'suggested_bank' => $faker->word,
         'insurance_number' => rand(1000000000,99999999999),
-        'status' => rand(1,4)
+        'status' => 4
     ];
 });
 
@@ -52,6 +52,6 @@ $factory->define(InsuranceApply::class, function (Faker $faker) {
         'monthly_amount' => rand(1,16) * 2500000,
         'shaba' => 'IR'.rand(100000000000,9999999999999),
         'bank' => $faker->word,
-        'status' => rand(1,4)
+        'status' => 4
     ];
 });

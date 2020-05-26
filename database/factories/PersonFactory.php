@@ -13,6 +13,8 @@ $factory->define(Person::class, function (Faker $faker) {
     $maritals = defaults('marital_status');
     $genders = defaults('gender');
     $domains = defaults('file_domain');
+    $wardens = defaults('warden_type');
+    $healths = defaults('health_status');
     $file_status = defaults('file_status_'.rand(1,2));
     $persian_date = rand(1350,1380).'/'.rand(1,12).'/'.rand(1,29);
 
@@ -35,8 +37,8 @@ $factory->define(Person::class, function (Faker $faker) {
         'family_members' => rand(3,8),
         'gender' => $genders[array_rand($genders)],
         'education' => $educations[array_rand($educations)],
-        'warden_type' => $educations[array_rand($educations)],
-        'health_status' => $educations[array_rand($educations)],
+        'warden_type' => $wardens[array_rand($wardens)],
+        'health_status' => $healths[array_rand($healths)],
         'disables_in_family' => rand(0,2),
         'mobile' => $faker->e164PhoneNumber,
         'file_domain' => $domains[array_rand($domains)],

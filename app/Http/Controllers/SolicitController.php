@@ -38,6 +38,9 @@ class SolicitController extends Controller
     {
         $data = self::validation();
         $organ = Organ::where('user_id', user('id'))->firstOrFail();
+        if ($organ->status != 4) {
+            return back()->withError('ACCOUNT_NOT_ACTIVATED');
+        }
         $data['organ_id'] = $organ->id;
         Solicit::create($data);
         return redirect()->route('solicit.index')->withMessage('SOLICIT_CREATED');
