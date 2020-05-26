@@ -46,11 +46,6 @@ class SolicitController extends Controller
         return redirect()->route('solicit.index')->withMessage('SOLICIT_CREATED');
     }
 
-    public function show(Solicit $solicit)
-    {
-        //
-    }
-
     public function edit(Solicit $solicit)
     {
         return view('dash.solicit.form', compact('solicit'));

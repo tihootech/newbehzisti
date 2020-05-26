@@ -17,9 +17,9 @@
             </div>
         </form>
 
-        <hr>
 
         @if ($request->code)
+            <hr>
 
             @if ($job)
                 <div class="alert alert-info">

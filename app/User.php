@@ -26,6 +26,12 @@ class User extends Authenticatable
         'access'
     ];
 
+    public function owner()
+    {
+        $type = $this->type == 'user' ? 'person' : $this->type;
+        return $this->hasOne(class_name($type));
+    }
+
     public function getAccessAttribute()
     {
         if ($this->type == 'master') {

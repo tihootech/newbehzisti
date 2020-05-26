@@ -71,5 +71,14 @@
 			</li>
 		@endorgan
 
+		@php
+			$route = is('master') ? 'notification.create' : 'notification.index';
+		@endphp
+		<li>
+			<a class="app-menu__item @if(rn() == $route) active @endif" href="{{route($route)}}">
+				<i class="app-menu__icon fa fa-bullhorn"></i><span class="app-menu__label"> اطلاع رسانی </span>
+			</a>
+		</li>
+
 	</ul>
 </aside>

@@ -31,4 +31,5 @@ Route::post('introduce/{solicit}', 'IntroduceController@introduce_action')->name
 // resources
 Route::resource('expert', 'ExpertController')->except('show');
 Route::resource('organ', 'OrganController')->only(['index', 'destroy']);
-Route::resource('solicit', 'SolicitController');
+Route::resource('solicit', 'SolicitController')->except('show');
+Route::resource('notification', 'NotificationController')->except('show');
