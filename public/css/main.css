@@ -67,3 +67,11 @@ body {
 	margin: 0 3px;
 	font-size: 1.25em;
 }
+
+
+.main-logo {
+	width: 150px;
+	position: fixed;
+	bottom: 50px;
+	left: 50px;
+}

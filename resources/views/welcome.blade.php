@@ -3,9 +3,13 @@
     <section class="align-items-center d-flex bg-dark main-banner">
 
         <div class="banner-container">
-
+            {{-- <img src="{{asset('img/logo.png')}}" class="main-logo" alt="@"> --}}
             <div class="text-center">
-                <h1 class="text-light my-4"><strong> سازمان بهزیستی استان کرمانشاه </strong> </h1>
+                <h1 class="text-light h2 my-4">
+                    <strong class="d-block my-4"> سازمان بهزیستی کشور </strong>
+                    <strong class="d-block my-4"> اداره کل بهزیستی استان کرمانشاه</strong>
+                    <strong class="d-block my-4"> معاونت اشتغال و کارآفرینی </strong>
+                </h1>
                 <p>
                     <a href="{{route('home')}}" class="btn bg-danger btn-round text-light btn-lg">
                         ورود به کارتابل
