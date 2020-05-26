@@ -21,6 +21,10 @@ Route::post('apply/accept/{type}/{id}', 'SignupController@accept')->name('apply.
 Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.reject');
 
 
+// introduce
+Route::get('introduce/{solicit}', 'IntroduceController@introduce_form')->name('introduce.form');
+Route::post('introduce/{solicit}', 'IntroduceController@introduce_action')->name('introduce.action');
+
 // resources
 Route::resource('expert', 'ExpertController')->except('show');
 Route::resource('organ', 'OrganController')->only(['index', 'destroy']);

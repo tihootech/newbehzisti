@@ -127,6 +127,7 @@ class SignupController extends Controller
         if ($user && $user->type == 'user') {
             $data['state'] = 'کرمانشاه';
             $data['user_id'] = $user->id;
+            $data['english_birth_date'] = persian_to_carbon($data['birth_date']);
             if ($person) {
                 $person->update($data);
             }else {

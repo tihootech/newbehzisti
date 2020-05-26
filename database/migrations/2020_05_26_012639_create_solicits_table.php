@@ -26,6 +26,7 @@ class CreateSolicitsTable extends Migration
             $table->text('disability_level')->nullable();
             $table->text('skill_type')->nullable();
             $table->text('vehicle_type')->nullable();
+            $table->boolean('fresh')->default(1);
             $table->timestamps();
         });
     }

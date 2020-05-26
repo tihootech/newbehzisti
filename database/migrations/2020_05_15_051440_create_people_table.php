@@ -29,6 +29,7 @@ class CreatePeopleTable extends Migration
             $table->string('father_name');
             $table->string('birth_certificate_number');
             $table->string('birth_date');
+            $table->date('english_birth_date');
             $table->string('reference')->nullable();
             $table->string('madadkar_name')->nullable();
             $table->string('marital_status');

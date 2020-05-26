@@ -14,6 +14,7 @@ $factory->define(Person::class, function (Faker $faker) {
     $genders = defaults('gender');
     $domains = defaults('file_domain');
     $file_status = defaults('file_status_'.rand(1,2));
+    $persian_date = rand(1350,1380).'/'.rand(1,12).'/'.rand(1,29);
 
     return [
         'user_id' => rand(100,200),
@@ -26,7 +27,8 @@ $factory->define(Person::class, function (Faker $faker) {
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'father_name' => $faker->firstNameMale,
-        'birth_date' => rand(1350,1380).'/'.rand(1,12).'/'.rand(1,29),
+        'birth_date' => $persian_date,
+        'english_birth_date' => persian_to_carbon($persian_date),
         'birth_certificate_number' => rand(1000000000,99999999999),
         'madadkar_name' => $faker->name,
         'marital_status' => $maritals[array_rand($maritals)],

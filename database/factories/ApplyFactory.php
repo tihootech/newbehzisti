@@ -23,7 +23,7 @@ $factory->define(JobApply::class, function (Faker $faker) {
 
 $factory->define(LoanApply::class, function (Faker $faker) {
     return [
-        'person_id' => rand(1,251),
+        'person_id' => rand(1,500),
         'uid' => rs(8),
         'workshop_name' => $faker->word,
         'license_type' => $faker->word,

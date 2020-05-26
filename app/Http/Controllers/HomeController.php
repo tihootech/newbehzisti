@@ -7,6 +7,7 @@ use App\Organ;
 use App\Expert;
 use App\JobApply;
 use App\LoanApply;
+use App\Solicit;
 use App\InsuranceApply;
 
 class HomeController extends Controller
@@ -19,8 +20,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $actions = [];
+        $actions = $solicits = [];
         if (is('admin')) {
+            $solicits = Solicit::whereFresh(1)->latest()->get();
             $actions['job'] = JobApply::whereIn('status', [1,2])->get();
             $actions['loan'] = LoanApply::whereIn('status', [1,2])->get();
             $actions['insurance'] = InsuranceApply::whereIn('status', [1,2])->get();
@@ -38,6 +40,6 @@ class HomeController extends Controller
             }
         }
         $actions_count = array_sum(array_map("count", $actions));
-        return view('home', compact('actions', 'actions_count'));
+        return view('home', compact('actions', 'actions_count', 'solicits'));
     }
 }

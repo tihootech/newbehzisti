@@ -2,7 +2,8 @@
 
 function persian_to_carbon($persian_date)
 {
-    return $persian_date ? Illuminate\Support\Carbon::createFromTimestamp(timestamp($persian_date)) : null;
+    $array = explode('/', $persian_date);
+    return (new \Morilog\Jalali\Jalalian($array[0], $array[1], $array[2]))->toCarbon();
 }
 
 function human_date($timestamp)

@@ -5,6 +5,15 @@
 @endsection
 
 @section('main')
+
+    @if (is('admin') && count($solicits))
+        <div class="tile">
+            <h4 class="text-center"> <i class="fa fa-list ml-1"></i> کارفرمایانی که نیاز به مددجو دارند </h4>
+            <hr>
+            @include('partials.solicits_table')
+        </div>
+    @endif
+
     <div class="tile">
         @admins
 
