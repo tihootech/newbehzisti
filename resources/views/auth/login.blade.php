@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('auth/css/util.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/main.css?v=2.1')}}">
     <!--===============================================================================================-->
 </head>
 <body>
