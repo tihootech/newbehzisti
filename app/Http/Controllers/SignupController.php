@@ -217,6 +217,7 @@ class SignupController extends Controller
         if ($type == 3) {
             $apply_data = $request->validate([
                 'workshop_name' => 'required|string',
+                'workshop_code' => 'required|string|digits:10',
                 'license_type' => 'required|string',
                 'license_system' => 'required|string',
                 'plan_title' => 'required|string',

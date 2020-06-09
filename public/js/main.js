@@ -3,6 +3,11 @@ $(document).ready(function () {
 	// initializers
 	$('.pdp').persianDatepicker();
 	$('[data-toggle=popover]').popover();
+	$('[data-popover]').popover({
+		html: true,
+		trigger: 'hover',
+		placement: 'top'
+	});
 
 	// form changes
 	$('#education').change(function () {

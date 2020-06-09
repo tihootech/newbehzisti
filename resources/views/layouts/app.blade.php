@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/gif">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     @yield('title')
 
@@ -13,7 +14,53 @@
 </head>
 <body>
 
-    @yield('content')
+    <section class="main-banner">
+
+        <div class="banner-container">
+
+            <nav class="navbar navbar-expand-lg navbar-dark mb-auto">
+                {{-- <a class="navbar-brand" href="{{url('/')}}">سازمان بهزیستی کشور</a> --}}
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto snip-nav">
+                        <li class="nav-item @if(rn() == 'welcome') current @endif">
+                            <a class="nav-link" href="{{url('/')}}">
+                                <i class="fa fa-home ml-1"></i>
+                                صفحه اصلی وبسایت
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('home')}}">
+                                <i class="fa fa-user ml-1"></i>
+                                ورود به کارتابل
+                            </a>
+                        </li>
+                        <li class="nav-item @if(rn() == 'nots') current @endif">
+                            <a class="nav-link" href="{{route('nots')}}">
+                                <i class="fa fa-bullhorn ml-1"></i>
+                                اطلاعیه های عمومی
+                            </a>
+                        </li>
+                        <li class="nav-item @if(rn() == 'contactus') current @endif">
+                            <a class="nav-link" href="{{route('contactus')}}">
+                                <i class="fa fa-phone ml-1"></i>
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="mb-auto w-75 mx-auto">
+                @yield('content')
+            </div>
+        </div>
+
+    </section>
+
 
     <script src="{{ asset('js/app.js') }}?v=2"></script>
     <script src="{{ asset('js/pdp.min.js') }}?v=2"></script>

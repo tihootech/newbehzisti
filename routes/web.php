@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // defaults
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('welcome');
 Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -21,8 +19,10 @@ Route::post('apply/accept/{type}/{id}', 'SignupController@accept')->name('apply.
 Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.reject');
 
 
-// rahgiri
+// other
 Route::get('rahgiri', 'RahgiriController@rahgiri')->name('rahgiri');
+Route::get('اطلاعیه-های-عمومی', 'PublicNotificatioController@index')->name('nots');
+Route::view('تماس-با-ما', 'contactus')->name('contactus');
 
 // introduce
 Route::get('introduce/{solicit}', 'IntroduceController@introduce_form')->name('introduce.form');

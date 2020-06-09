@@ -53,6 +53,7 @@
 	@if ($type == 3)
 
 		@include('partials.input', ['type' => 'text', 'name'=>'workshop_name', 'col' => 3, 'required' => 1, 'object' => $apply])
+		@include('partials.input', ['type' => 'text', 'name'=>'workshop_code', 'col' => 3, 'required' => 1, 'object' => $apply])
 		@include('partials.input', ['type' => 'text', 'name'=>'license_type', 'col' => 3, 'required' => 1, 'object' => $apply])
 		@include('partials.input', ['type' => 'text', 'name'=>'license_system', 'col' => 3, 'required' => 1, 'object' => $apply])
 		@include('partials.input', ['type' => 'text', 'name'=>'plan_title', 'col' => 3, 'required' => 1, 'object' => $apply])
