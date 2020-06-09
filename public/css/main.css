@@ -17,6 +17,17 @@ body {
 	font-family: Tanha;
 } */
 
+
+.content-yield {
+	width: 95%;
+}
+
+@media only screen and (max-width: 600px) {
+	.content-yield {
+		width: 98%;
+	}
+}
+
 .btn-round {
 	border-radius: 21px;
 	padding: 15 30px !important;
@@ -32,7 +43,6 @@ body {
 	background-image: url('../img/bg.jpg');
 }
 .main-banner > .banner-container {
-	padding: 50px;
 	width: 100%;
 	min-height:100vh;
 	display: flex;
@@ -136,4 +146,13 @@ body {
 .snip-nav a:hover:after,
 .snip-nav .current a:after {
   width: 100%;
+}
+
+.page-item.active .page-link {
+	background-color: #E3342F;
+    border-color: #E3342F;
+}
+
+.page-link {
+	color: #E3342F;
 }

@@ -45,6 +45,16 @@
        width: '100%',
     });
 
+	// disappear
+	$('#contact-type').change(function () {
+		var val = $(this).val();
+		if (val == 'public') {
+			$('#city').parents('.form-group').hide();
+		}else {
+			$('#city').parents('.form-group').show();
+		}
+	});
+
 	// select all
 	$(".select-all").click(function(){
 		var id = $(this).data('id');

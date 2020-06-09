@@ -46,7 +46,7 @@
 							</div>
 							<div class="col-md-3">
 								<i class="fa fa-map-marker ml-1"></i>
-								<b> {{$notification->city}} </b>
+								<b> {{$notification->city ?? 'همه شهر ها'}} </b>
 							</div>
 						@endmaster
 					</div>

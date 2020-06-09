@@ -10,7 +10,7 @@
             <strong class="d-block my-4"> اداره کل بهزیستی استان کرمانشاه</strong>
             <strong class="d-block my-4"> معاونت اشتغال و کارآفرینی </strong>
         </h1>
-        <hr class="border-light">
+        <hr class="border-light w-50">
         <a href="{{route('signup', 1)}}" class="btn bg-light btn-round m-1" data-popover data-content="این آیتم صرفا مختص مددجویان تحت پوششی است که مجوز راه اندازی شغلی را نداشته و یا تمایلی به دریافت تسهیلات ندارند و متقاضی اشتغال در دستگاه های اجرایی و یا کارگاه های تولیدی و خدماتی هستند.">
             مددجوی متقاضی شغل
         </a>

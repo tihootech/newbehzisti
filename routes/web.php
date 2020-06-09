@@ -21,7 +21,7 @@ Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.
 
 // other
 Route::get('rahgiri', 'RahgiriController@rahgiri')->name('rahgiri');
-Route::get('اطلاعیه-های-عمومی', 'PublicNotificatioController@index')->name('nots');
+Route::get('اطلاعیه-های-عمومی', 'NotificationController@publics')->name('nots');
 Route::view('تماس-با-ما', 'contactus')->name('contactus');
 
 // introduce

@@ -1,9 +1,11 @@
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped table-bordered">
     <thead>
         <tr>
             <th> # </th>
             <th> نام و نام خانوادگی شخص </th>
             <th> شهر </th>
+            <th> تاریخ ایجاد </th>
+            <th> تاریخ آخرین تغییر </th>
             <th> عملیات </th>
         </tr>
     </thead>
@@ -13,6 +15,8 @@
                 <th> {{$i+1}} </th>
                 <td> {{$apply->full_name ?? $apply->person->full_name ?? '-'}} </td>
                 <td> {{$apply->city ?? $apply->person->city ?? '-'}} </td>
+                <td> {{date_picker_date($apply->created_at)}} </td>
+                <td> {{date_picker_date($apply->updated_at)}} </td>
                 <td> <a href="#{{$type}}-modal-{{$apply->id}}" data-toggle="modal" class="btn btn-outline-primary btn-sm"> بررسی </a> </td>
             </tr>
         @endforeach

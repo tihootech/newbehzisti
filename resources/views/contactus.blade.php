@@ -10,9 +10,9 @@
         <div class="card-body p-0">
 
             <div class="p-3">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="card my-2">
                             <div class="card-header">
                                 شماره تماس
                             </div>
@@ -23,8 +23,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <div class="card">
+                    <div class="col-md-8">
+                        <div class="card my-2">
                             <div class="card-header">
                                 آدرس
                             </div>

@@ -18,7 +18,7 @@
 
         <div class="banner-container">
 
-            <nav class="navbar navbar-expand-lg navbar-dark mb-auto">
+            <nav class="navbar navbar-expand-lg navbar-dark mb-auto mt-4">
                 {{-- <a class="navbar-brand" href="{{url('/')}}">سازمان بهزیستی کشور</a> --}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
                 </div>
             </nav>
 
-            <div class="mb-auto w-75 mx-auto">
+            <div class="mb-auto mx-auto content-yield">
                 @yield('content')
             </div>
         </div>

@@ -26,17 +26,18 @@
 			@endif
 
 			@include('partials.input', ['type' => 'text', 'name'=>'subject', 'col' => 5, 'required' => 1, 'object' => $notification])
-			<div class="col-md-3 form-group">
-                <label for="contact"> <b class="text-danger"> * </b> @lang('contact') </label>
-                <select class="form-control" id="contact" name="contact" required>
+			<div class="col-md-2 form-group">
+                <label for="contact-type"> <b class="text-danger"> * </b> @lang('contact') </label>
+                <select class="form-control" id="contact-type" name="contact" required>
                     <option value=""> -- انتخاب کنید -- </option>
-                    <option @if($notification->contact == 'expert') selected @endif value="expert"> @lang('experts') </option>
+                    <option @if($notification->contact == 'public') selected @endif value="public"> @lang('public') </option>
+					<option @if($notification->contact == 'expert') selected @endif value="expert"> @lang('organs') </option>
                     <option @if($notification->contact == 'user') selected @endif value="user"> @lang('madadjus') </option>
                     <option @if($notification->contact == 'organ') selected @endif value="organ"> @lang('organs') </option>
                 </select>
             </div>
-			@include('partials.input', ['type' => 'select', 'name'=>'city', 'col' => 3, 'required' => 1, 'object' => $notification,
-				'options' => defaults('city')
+			@include('partials.input', ['type' => 'select', 'name'=>'city', 'col' => 4, 'required' => 0, 'object' => $notification,
+				'options' => defaults('city'), 'more_info' => 'در صورت تمایل میتوانید شهر را نیز ذکر کنید.', 'hide' => $notification->contact == 'public'
 			])
             <div class="col-md-12 form-group">
                 <label for="body"> <b class="text-danger"> * </b> متن اطلاعیه </label>

@@ -10,8 +10,14 @@ class NotificationController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('master')->except(['index']);
+        $this->middleware('auth')->except(['publics']);
+        $this->middleware('master')->except(['publics', 'index']);
+    }
+
+    public function publics()
+    {
+        $nots = Notification::whereContact('public')->latest()->paginate(25);
+        return view('nots', compact('nots'));
     }
 
     public function index()
@@ -20,7 +26,9 @@ class NotificationController extends Controller
         if (!is('master')) {
             $user = auth()->user();
             $owner = $user->owner;
-            $notifications = $notifications->where('contact', user('type'))->where('city', $owner->city);
+            $notifications = $notifications->where('contact', user('type'))->where(function ($query) {
+                $query->where('city', $owner->city)->orWhereNull('city');
+            });
         }
         $notifications = $notifications->latest()->get();
         return view('dash.notification.index', compact('notifications'));
@@ -62,7 +70,7 @@ class NotificationController extends Controller
         return request()->validate([
             'subject' => 'required|string',
             'contact' => 'required|string',
-            'city' => 'required|string',
+            'city' => 'nullable|string',
             'body' => 'required|string',
         ]);
     }
