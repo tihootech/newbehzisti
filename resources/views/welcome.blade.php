@@ -6,7 +6,7 @@
 
     <div class="text-center">
         <h1 class="text-light h2 my-4">
-            <strong class="d-block my-4"> سازمان بهزیستی کشور </strong>
+            {{-- <strong class="d-block my-4"> سازمان بهزیستی کشور </strong> --}}
             <strong class="d-block my-4"> اداره کل بهزیستی استان کرمانشاه</strong>
             <strong class="d-block my-4"> معاونت اشتغال و کارآفرینی </strong>
         </h1>
