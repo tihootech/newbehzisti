@@ -33,7 +33,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('home')}}">
+                            <a class="nav-link @if(rn() == 'login') current @endif" href="{{route('home')}}">
                                 <i class="fa fa-user ml-1"></i>
                                 ورود به کارتابل
                             </a>
