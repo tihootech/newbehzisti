@@ -235,7 +235,7 @@ class SignupController extends Controller
             if ($type == 1) $class = 'App\JobApply';
             if ($type == 2) $class = 'App\LoanApply';
             if ($type == 3) $class = 'App\InsuranceApply';
-            $apply_data['uid'] = rs(8);
+            $apply_data['uid'] = rand(100000000,999999999);
             $apply_data['person_id'] = $person->id;
             $class::create($apply_data);
         }
@@ -284,7 +284,7 @@ class SignupController extends Controller
 
         unset($data['username']);
         unset($data['password']);
-        $data['uid'] = rs(8);
+        $data['uid'] = rand(100000000,999999999);
         $data['user_id'] = $user->id;
         $data['state'] = 'کرمانشاه';
 

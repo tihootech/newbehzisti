@@ -51,6 +51,7 @@
                     <th> @lang('insurance_status') </th>
                     <th> @lang('insurance_number') </th>
                     <th> @lang('workshop_name') </th>
+                    <th> @lang('workshop_code') </th>
                     <th style="min-width:200px"> @lang('monthly_amount') </th>
                     <th style="min-width:200px"> @lang('shaba') </th>
                     <th> @lang('bank') </th>
@@ -123,6 +124,7 @@
                         <td> {{$apply->insurance_status}} </td>
                         <td> {{$apply->insurance_number}} </td>
                         <td> {{$apply->workshop_name}} </td>
+                        <td> {{$apply->workshop_code ?? '-'}} </td>
                         <td> {{nf($apply->monthly_amount)}} ریال </td>
                         <td> {{$apply->shaba}} </td>
                         <td> {{$apply->bank}} </td>

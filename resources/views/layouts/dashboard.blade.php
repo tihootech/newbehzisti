@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Main CSS-->
-        <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.css')}}?v=2.1" />
-        <link rel="stylesheet" type="text/css" href="{{asset('css/pdp.css')}}?v=2.1" />
+        <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.css')}}?v=2.2" />
+        <link rel="stylesheet" type="text/css" href="{{asset('css/pdp.css')}}?v=2.2" />
         <!-- Font-icon css-->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
@@ -33,6 +33,6 @@
         <script src="{{asset("js/pdp.min.js")}}"></script>
         <script type="text/javascript" src="{{asset('dashboard/js/plugins/chart.js')}}"></script>
         <!-- Page specific javascripts-->
-        <script src="{{asset('dashboard/js/main.js')}}?v=2.1"></script>
+        <script src="{{asset('dashboard/js/main.js')}}?v=2.2"></script>
     </body>
 </html>

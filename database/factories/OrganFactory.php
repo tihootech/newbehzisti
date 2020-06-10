@@ -16,7 +16,7 @@ $factory->define(Organ::class, function (Faker $faker) {
     $amounts = defaults('payment_amount');
 
     return [
-        'uid' => rs(8),
+        'uid' => rand(100000000,999999999),
         'user_id' => rand(100,200),
         'state' => 'کرمانشاه',
         'city' => $cities[array_rand($cities)],

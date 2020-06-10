@@ -8,9 +8,9 @@
 
     @yield('title')
 
-    <link href="{{ asset('css/app.css') }}?v=2.1" rel="stylesheet">
-    <link href="{{ asset('css/pdp.css') }}?v=2.1" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}?v=2.1" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}?v=2.2" rel="stylesheet">
+    <link href="{{ asset('css/pdp.css') }}?v=2.2" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}?v=2.2" rel="stylesheet">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
         <div class="banner-container">
 
             <nav class="navbar navbar-expand-lg navbar-dark mb-auto mt-4">
-                {{-- <a class="navbar-brand" href="{{url('/')}}">سازمان بهزیستی کشور</a> --}}
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -62,8 +62,8 @@
     </section>
 
 
-    <script src="{{ asset('js/app.js') }}?v=2.1"></script>
-    <script src="{{ asset('js/pdp.min.js') }}?v=2.1"></script>
-    <script src="{{ asset('js/main.js') }}?v=2.1"></script>
+    <script src="{{ asset('js/app.js') }}?v=2.2"></script>
+    <script src="{{ asset('js/pdp.min.js') }}?v=2.2"></script>
+    <script src="{{ asset('js/main.js') }}?v=2.2"></script>
 </body>
 </html>

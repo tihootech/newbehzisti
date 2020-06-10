@@ -13,7 +13,7 @@ $factory->define(JobApply::class, function (Faker $faker) {
 
     return [
         'person_id' => rand(1,251),
-        'uid' => rs(8),
+        'uid' => rand(100000000,999999999),
         'skill_type' => $faker->sentence(5),
         'interests' => $faker->sentence(),
         'vehicle_type' => $vihicles[array_rand($vihicles)],
@@ -24,7 +24,7 @@ $factory->define(JobApply::class, function (Faker $faker) {
 $factory->define(LoanApply::class, function (Faker $faker) {
     return [
         'person_id' => rand(1,500),
-        'uid' => rs(8),
+        'uid' => rand(100000000,999999999),
         'workshop_name' => $faker->word,
         'license_type' => $faker->word,
         'license_system' => $faker->word,
@@ -42,7 +42,7 @@ $factory->define(InsuranceApply::class, function (Faker $faker) {
 
     return [
         'person_id' => rand(1,251),
-        'uid' => rs(8),
+        'uid' => rand(100000000,999999999),
         'license_type' => $faker->word,
         'license_system' => $faker->word,
         'plan_title' => $faker->word,
