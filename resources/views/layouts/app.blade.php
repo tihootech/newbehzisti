@@ -32,8 +32,8 @@
                                 صفحه اصلی وبسایت
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link @if(rn() == 'login') current @endif" href="{{route('home')}}">
+                        <li class="nav-item @if(rn() == 'login') current @endif">
+                            <a class="nav-link" href="{{route('login')}}">
                                 <i class="fa fa-user ml-1"></i>
                                 ورود به کارتابل
                             </a>
