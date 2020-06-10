@@ -25,6 +25,6 @@
         </a>
     </div>
 
-    {{-- <img src="{{asset('img/favicon.png')}}" alt="اداره کل بهزیستی استان کرمانشاه" class="main-logo"> --}}
+    <img src="{{asset('img/white-logo.png')}}" alt="اداره کل بهزیستی استان کرمانشاه" class="main-logo">
 
 @endsection

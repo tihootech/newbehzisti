@@ -3,7 +3,7 @@
 @section('title')
     <title> ورود به حساب کاربری </title>
     <link rel="stylesheet" type="text/css" href="{{asset('auth/css/util.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/main.css?v=2.2')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/main.css?v=2.3')}}">
 @endsection
 
 @section('content')
