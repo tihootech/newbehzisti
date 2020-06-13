@@ -23,6 +23,8 @@ Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.
 Route::get('rahgiri', 'RahgiriController@rahgiri')->name('rahgiri');
 Route::get('اطلاعیه-های-عمومی', 'NotificationController@publics')->name('nots');
 Route::view('تماس-با-ما', 'contactus')->name('contactus');
+Route::get('excel/organ', 'OrganController@export')->name('organ.excel');
+Route::get('excel/madadju', 'MadadjuController@export')->name('madadju.excel');
 
 // introduce
 Route::get('introduce/{solicit}', 'IntroduceController@introduce_form')->name('introduce.form');

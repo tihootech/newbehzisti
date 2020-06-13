@@ -1,6 +1,6 @@
 @php
 	$object = $object ?? $person ?? null;
-	$val = $object->$name ?? old($name);
+	$val = $raw_value ?? $object->$name ?? old($name);
 @endphp
 
 <div class="col-md-{{$col}} form-group" @if( isset($hide) && $hide ) style="display:none" @endif>

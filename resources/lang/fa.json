@@ -79,6 +79,13 @@
 	"organs":"کارفرمایان",
 	"workshop_code":"کد کارگاه",
 	"public":"عمومی",
+	"operator":"نام مسئول",
+	"name":"نام",
+	"english_birth_date":"تاریخ تولد به میلادی",
+	"created_at":"تاریخ ثبت در سیستم",
+	"updated_at":"تاریخ آخرین ویرایش",
+	"rahgiri_code":"کدرهگیری",
+	"status":"وضعیت",
 	"":"",
 
 
