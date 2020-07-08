@@ -91,7 +91,7 @@
 			<a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
 			<ul class="dropdown-menu settings-menu text-right">
 				<li>
-					<a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> حساب کاربری </a>
+					<a class="dropdown-item" href="{{route('acc')}}"><i class="fa fa-user fa-lg"></i> حساب کاربری </a>
 				</li>
 				<li>
 					<a class="dropdown-item" href="javascript:void" onclick="$('#signout').submit()">

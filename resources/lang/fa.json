@@ -17,6 +17,7 @@
 	"father_name":"نام پدر",
 	"insurance_number":"شماره بیمه",
 	"marital_status":"وضعیت تاهل",
+	"military_status":"وضعیت سربازی",
 	"city":"شهرستان",
 	"lifestyle":"موقعیت زندگی",
 	"postal_code":"کدپستی",
@@ -117,6 +118,11 @@
 	"SOLICIT_CREATED":"درخواست شما در سیستم ثبت شد.",
 	"ACCOUNT_NOT_ACTIVATED":"حساب کاربری شما هنوز تایید نشده است.",
 	"NEW_NOTIFICATION":"اطلاع رسانی با موفقیت انجام شد.",
+	"UPDATE_ACC_MESSAGE":"اطلاعات حساب کاربری شما تغییر یافت",
+	"NO_CHANGES_MADE":"تغییری صورت نگرفته است",
+	"WRONG_CURRENT_PASSWORD":"رمزعبور فعلی اشتباه است",
+	"":"",
+	"":"",
 	"":"",
 	"":""
 }

@@ -23,6 +23,14 @@ $(document).ready(function () {
 			$('#academic_orientation').prop('required',true).parents('.form-group').show();
 		}
 	});
+	$('#gender').change(function () {
+		var val = $(this).val();
+		if (val == 'مرد') {
+			$('#military_status').prop('required',true).parents('.form-group').show();
+		}else {
+			$('#military_status').prop('required',false).parents('.form-group').hide();
+		}
+	});
 	$('input[name=file_domain]').change(function () {
 		var val = $(this).val();
 		if (val == 'توانبخشی') {

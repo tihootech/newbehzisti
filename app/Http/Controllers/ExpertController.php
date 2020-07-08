@@ -33,8 +33,8 @@ class ExpertController extends Controller
     {
         $data = self::validation();
         $user = User::create([
-            'name' => rs(5),
-            'password' => $request->national_code,
+            'name' => $request->username,
+            'password' => bcrypt($request->national_code),
             'type' => 'expert',
         ]);
         $data['user_id'] = $user->id;
@@ -49,7 +49,7 @@ class ExpertController extends Controller
 
     public function update(Request $request, Expert $expert)
     {
-        $data = self::validation($expert->id);
+        $data = self::validation($expert);
         $expert->update($data);
         return redirect()->route('expert.index')->withMessage( __('SUCCESS') );
     }
@@ -61,14 +61,18 @@ class ExpertController extends Controller
         return redirect()->route('expert.index')->withMessage( __('DELETED_SUCCESSFULLY') );
     }
 
-    private static function validation($id=0)
+    private static function validation($expert=null)
     {
+        $user_id = $expert->user->id ?? 0;
+        $id = $expert->id ?? 0;
         $data = request()->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
+            'username' => 'required|string|unique:users,name,'.$user_id,
             'national_code' => ['required', new NationalCodeRule, 'unique:experts,national_code,'.$id],
             'city' => Rule::in( defaults('city') ),
         ]);
+        unset($data['username']);
         return $data;
     }
 }

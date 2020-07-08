@@ -113,6 +113,7 @@ class SignupController extends Controller
             'reference' => 'nullable',
             'madadkar_name' => 'required|string',
             'marital_status' => Rule::in( defaults('marital_status') ),
+            'military_status' => Rule::in( defaults('military_status') ),
             'family_members' => 'required|integer',
             'gender' => Rule::in( defaults('gender') ),
             'education' => Rule::in( defaults('education') ),
@@ -130,6 +131,7 @@ class SignupController extends Controller
             $data['english_birth_date'] = persian_to_carbon($data['birth_date']);
             if ($person) {
                 $person->update($data);
+                $person->make_fresh();
             }else {
                 Person::create($data);
             }
@@ -168,6 +170,7 @@ class SignupController extends Controller
                 ],
             ]);
 
+            $person->make_fresh();
             $person->update([
                 'file_domain' => $request->file_domain,
                 'disability_type' => $request->file_domain == 'توانبخشی' ? $request->disability_type : null,
@@ -230,6 +233,7 @@ class SignupController extends Controller
         }
 
         if ($apply) {
+            $apply_data['status'] = 1;
             $apply->update($apply_data);
         }else {
             if ($type == 1) $class = 'App\JobApply';

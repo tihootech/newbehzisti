@@ -20,8 +20,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $actions = $solicits = [];
         if (is('admin')) {
+            $actions = $solicits = [];
             $solicits = Solicit::whereFresh(1)->latest()->get();
             $actions['job'] = JobApply::whereIn('status', [1,2])->get();
             $actions['loan'] = LoanApply::whereIn('status', [1,2])->get();
@@ -38,8 +38,16 @@ class HomeController extends Controller
                     }
                 }
             }
+            $actions_count = array_sum(array_map("count", $actions));
+            return view('home', compact('actions', 'actions_count', 'solicits'));
+        }elseif (is('user')) {
+            $user = auth()->user();
+            $person = $user->owner;
+            $types = ['job', 'loan', 'insurance'];
+            return view('home', compact('person', 'types'));
+        }else {
+            return view('home');
         }
-        $actions_count = array_sum(array_map("count", $actions));
-        return view('home', compact('actions', 'actions_count', 'solicits'));
+
     }
 }

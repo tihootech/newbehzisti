@@ -26,4 +26,14 @@ class Person extends Model
             return InsuranceApply::where('person_id', $this->id)->first();
         }
     }
+
+    public function make_fresh()
+    {
+        for ($i=1; $i <=3 ; $i++) {
+            if ($apply = $this->applied($i)) {
+                $apply->status = 1;
+                $apply->save();
+            }
+        }
+    }
 }

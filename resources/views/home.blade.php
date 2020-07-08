@@ -55,5 +55,38 @@
             @endif
 
         @endadmins
+
+        @regular_user
+            <h3> اطلاعات ثبت شده شما </h3>
+            <hr>
+            @foreach ($types as $i => $type)
+                <h4 class="text-center my-3">
+                    @if ($type == 'job')
+                        درخواست شغل
+                    @elseif ($type == 'loan')
+                        درخواست وام
+                    @elseif ($type == 'insurance')
+                        بیمه کارفرمایی
+                    @endif
+                </h4>
+                <div class="row modal-summury">
+                    @if ($apply = $person->applied($i+1))
+                        @include('partials.apply_content')
+                        <div class="w-75 py-2 mx-auto alert alert-info my-3 text-center">
+                            <span>
+                                درصورتی که تمایل دارید این اطلاعات را ویرایش کنید
+                                <a href="{{route('signup' , [$i+1, 2])}}"> کلیک کنید </a>
+                            </span>
+                            <br>
+                            <span> توجه داشته باشید که در صورت ویرایش این اطلاعات، وضعیت درخواست شما معلق میشود و کارشناس مجدد درخواست شما را بررسی میکند. </span>
+                        </div>
+                    @else
+                        <div class="w-75 mx-auto text-center py-3 alert alert-warning">
+                            عدم ثبت نام
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+        @endregular_user
     </div>
 @endsection

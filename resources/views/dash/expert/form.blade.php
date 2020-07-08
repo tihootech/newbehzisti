@@ -26,14 +26,20 @@
 				@method('PUT')
 			@endif
 
-			@include('partials.input', ['type' => 'text', 'name'=>'first_name', 'col' => 3, 'required' => 1, 'object' => $expert])
-			@include('partials.input', ['type' => 'text', 'name'=>'last_name', 'col' => 3, 'required' => 1, 'object' => $expert])
+			@include('partials.input', ['type' => 'text', 'name'=>'first_name', 'col' => 2, 'required' => 1, 'object' => $expert])
+			@include('partials.input', ['type' => 'text', 'name'=>'last_name', 'col' => 2, 'required' => 1, 'object' => $expert])
+			@include('partials.input', ['type' => 'text', 'name'=>'username', 'col' => 2, 'required' => 1, 'object' => $expert])
 			@include('partials.input', ['type' => 'text', 'name'=>'national_code', 'col' => 3, 'required' => 1, 'object' => $expert])
 			@include('partials.input', ['type' => 'select', 'name'=>'city', 'col' => 3, 'required' => 1, 'object' => $expert,
 				'options' => defaults('city')
 			])
 
 			<hr class="w-100">
+			@unless ($expert->id)
+				<p class="w-100 text-center text-info">
+					پس از ایجاد کاربر در سیستم، رمزعبور کاربر کدملی او خواهد شد.
+				</p>
+			@endunless
 			<div class="col-md-2 mx-auto">
 				<button type="submit" class="btn btn-outline-primary btn-block"> تایید </button>
 			</div>

@@ -20,6 +20,7 @@
                 <th> @lang('marital_status') </th>
                 <th> @lang('family_members') </th>
                 <th> @lang('gender') </th>
+                <th> @lang('military_status') </th>
                 <th> @lang('education') </th>
                 <th> @lang('field_of_study') </th>
                 <th> @lang('academic_orientation') </th>
@@ -93,6 +94,7 @@
                     <td> {{$apply->marital_status ?? '-'}} </td>
                     <td> {{$apply->family_members ?? '-'}} </td>
                     <td> {{$apply->gender ?? '-'}} </td>
+                    <td> {{$apply->gender == 'مرد' ? ($apply->military_status ?? 'نامشخص') : '-'}} </td>
                     <td> {{$apply->education ?? '-'}} </td>
                     <td> {{$apply->field_of_study ?? '-'}} </td>
                     <td> {{$apply->academic_orientation ?? '-'}} </td>

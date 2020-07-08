@@ -14,7 +14,7 @@
 
 @section('content')
 
-    <div class="card">
+    <div class="card mb-5">
         <div class="card-header text-center">
             <h1 class="h3">
                 @if ($type == 1)

@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Person;
+use App\Expert;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithHeadings;

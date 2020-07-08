@@ -23,15 +23,21 @@
 	@include('partials.input', ['type' => 'date', 'name'=>'birth_date', 'col' => 2, 'required' => 1])
 	@include('partials.input', ['type' => 'text', 'name'=>'birth_certificate_number', 'col' => 2, 'required' => 1])
 	@include('partials.input', ['type' => 'text', 'name'=>'reference', 'col' => 3, 'required' => 0])
-	@include('partials.input', ['type' => 'text', 'name'=>'madadkar_name', 'col' => 3, 'required' => 1])
+	@include('partials.input', ['type' => 'text', 'name'=>'madadkar_name', 'col' => 2, 'required' => 1])
+	@include('partials.input', ['type' => 'number', 'name'=>'family_members', 'col' => 1, 'required' => 1])
 	@include('partials.input', ['type' => 'select', 'name'=>'marital_status', 'col' => 2, 'required' => 1,
 		'options' => defaults('marital_status')
 	])
 
 
-	@include('partials.input', ['type' => 'number', 'name'=>'family_members', 'col' => 2, 'required' => 1])
 	@include('partials.input', ['type' => 'select', 'name'=>'gender', 'col' => 2, 'required' => 1,
 		'options' => defaults('gender')
+	])
+	@php
+		$g = $person->gender ?? old('gender');
+	@endphp
+	@include('partials.input', ['type' => 'select', 'name'=>'military_status', 'col' => 2, 'required' => $g == 'مرد',
+		'options' => defaults('military_status'), 'hide' => $g == 'زن'
 	])
 	@include('partials.input', ['type' => 'select', 'name'=>'education', 'col' => 2, 'required' => 1,
 		'options' => defaults('education')

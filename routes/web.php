@@ -7,6 +7,10 @@ Route::view('/', 'welcome')->name('welcome');
 Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
+// general : user account management
+Route::get('acc', 'AccController@edit')->name('acc');
+Route::put('acc', 'AccController@update')->name('acc_update');
+
 // signups & madadjus
 Route::get('ثبت-نام-کارفرما', 'SignupController@organ_form')->name('organ.signup');
 Route::get('organ/uid/{uid}', 'SignupController@organ_finished')->name('organ.finished');

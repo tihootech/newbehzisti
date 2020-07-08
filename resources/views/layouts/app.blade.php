@@ -8,9 +8,9 @@
 
     @yield('title')
 
-    <link href="{{ asset('css/app.css') }}?v=2.4" rel="stylesheet">
-    <link href="{{ asset('css/pdp.css') }}?v=2.4" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}?v=2.4" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}?v=2.5" rel="stylesheet">
+    <link href="{{ asset('css/pdp.css') }}?v=2.5" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}?v=2.5" rel="stylesheet">
 </head>
 <body>
 
@@ -62,8 +62,8 @@
     </section>
 
 
-    <script src="{{ asset('js/app.js') }}?v=2.4"></script>
-    <script src="{{ asset('js/pdp.min.js') }}?v=2.4"></script>
-    <script src="{{ asset('js/main.js') }}?v=2.4"></script>
+    <script src="{{ asset('js/app.js') }}?v=2.5"></script>
+    <script src="{{ asset('js/pdp.min.js') }}?v=2.5"></script>
+    <script src="{{ asset('js/main.js') }}?v=2.5"></script>
 </body>
 </html>
