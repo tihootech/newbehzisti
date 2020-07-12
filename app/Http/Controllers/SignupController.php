@@ -113,7 +113,7 @@ class SignupController extends Controller
             'reference' => 'nullable',
             'madadkar_name' => 'required|string',
             'marital_status' => Rule::in( defaults('marital_status') ),
-            'military_status' => Rule::in( defaults('military_status') ),
+            'military_status' => ['nullable', Rule::in( defaults('military_status') )],
             'family_members' => 'required|integer',
             'gender' => Rule::in( defaults('gender') ),
             'education' => Rule::in( defaults('education') ),
