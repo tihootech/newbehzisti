@@ -15,6 +15,7 @@ use App\LoanApply;
 use App\InsuranceApply;
 use App\Organ;
 use App\Expert;
+use App\History;
 
 class SignupController extends Controller
 {
@@ -242,6 +243,7 @@ class SignupController extends Controller
             $apply_data['uid'] = rand(100000000,999999999);
             $apply_data['person_id'] = $person->id;
             $class::create($apply_data);
+            History::make($type, $person->id);
         }
 
         $person->update($person_data);

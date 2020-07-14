@@ -44,12 +44,7 @@ class SetHistory extends Command
         foreach ($people as $person) {
             for ($i=1; $i <=3 ; $i++) {
                 if ($apply = $person->applied($i)) {
-                    $h = new History;
-                    $des = 'ثبت نام مددجو برای '.persian_apply_type($i);
-                    $h->person_id = $person->id;
-                    $h->description = $des;
-                    $h->created_at = $apply->created_at;
-                    $h->save();
+                    History::make($i, $person->id, $apply->created_at);
                 }
             }
         }
