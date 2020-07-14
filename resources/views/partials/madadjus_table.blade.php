@@ -6,6 +6,7 @@
                 @unless ($imode)
                     <th> وضعیت </th>
                 @endunless
+                <th> یادداشت ها </th>
                 <th style="min-width:200px"> نام </th>
                 <th> @lang('city') </th>
                 <th> @lang('lifestyle') </th>
@@ -80,6 +81,7 @@
                             {{$apply->stat}}
                         </td>
                     @endunless
+                    <td> <a href="#" data-toggle="modal" data-target="#histroy-{{$apply->id}}"> <i class="fa fa-calendar-o"></i> </a> </td>
                     <td> {{$apply->full_name ?? '-'}} </td>
                     <td> {{$apply->city ?? '-'}} </td>
                     <td> {{$apply->lifestyle ?? '-'}} </td>
@@ -154,3 +156,84 @@
         </tbody>
     </table>
 </div>
+
+@foreach ($list as $r => $apply)
+    <div class="modal fade" id="histroy-{{$apply->id}}" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{$apply->full_name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if ($apply->person && $apply->person->histories->count())
+
+                        <div class="text-center mb-3">
+                            <a href="#new-note-{{$apply->id}}" data-toggle="collapse"> <i class="fa fa-plus ml-1"></i> یادداشت جدید </a>
+                        </div>
+                        <form class="text-center collapse" method="post" action="{{route('note')}}" id="new-note-{{$apply->id}}">
+                            @csrf
+                            <input type="hidden" name="person_id" value="{{$apply->person_id}}">
+                            <textarea required name="description" rows="4" class="form-control"></textarea>
+                            <button type="submit" class="btn btn-primary my-2"> ذخیره یادداشت جدید </button>
+                        </form>
+
+                        @foreach ($apply->person->histories as $history)
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <p>
+                                        <b class="text-primary"> {{$history->description}} </b>
+                                        @if ($history->user_id == auth()->id())
+                                            <a class="text-info float-left" href="#edit-note-{{$apply->id}}" data-toggle="collapse"> ویرایش </a>
+                                            <form class="text-center collapse" method="post" action="{{route('note.update', $history->id)}}" id="edit-note-{{$apply->id}}">
+                                                @csrf
+                                                <textarea required name="description" rows="4" class="form-control">{{$history->description}}</textarea>
+                                                <button type="submit" class="btn btn-primary my-2"> ویرایش یادداشت </button>
+                                            </form>
+                                        @endif
+                                    </p>
+                                    <hr>
+                                    <div class="row text-center justify-content-center">
+                                        <div class="col-md-3">
+                                            <i class="fa fa-calendar"></i>
+                                            {{human_date($history->created_at)}}
+                                        </div>
+                                        <div class="col-md-3">
+                                            <i class="fa fa-clock-o"></i>
+                                            {{$history->created_at->format('H:i')}}
+                                        </div>
+                                        <div class="col-md-6">
+                                            <i class="fa fa-user"></i>
+                                            @if ($user = $history->user)
+                                                @if ($user->type == 'master')
+                                                    ناظر سیستم
+                                                @elseif($user->owner)
+                                                    {{$user->owner->full_name ?? '--'}}
+                                                    ({{$user->owner->city ?? '--'}})
+                                                @else
+                                                    <em> کاربر حذف شده است </em>
+                                                @endif
+                                            @else
+                                                یادداشت اتوماتیک سیستم
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    @else
+                        <div class="alert alert-warning">
+                            تاریخچه این شخص خالی است.
+                        </div>
+                    @endif
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach

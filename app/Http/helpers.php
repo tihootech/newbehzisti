@@ -22,6 +22,19 @@ function user($p=null)
     return $u ? ($p ? $u->$p : $u) : null;
 }
 
+function persian_apply_type($i)
+{
+    if ($i == 1) {
+        return 'شغل';
+    }
+    if ($i == 2) {
+        return 'وام';
+    }
+    if ($i == 3) {
+        return 'بیمه خویش فرمائی و کارفرمائی';
+    }
+}
+
 function is($type)
 {
     $u = auth()->user();

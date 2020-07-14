@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Apply extends Model
 {
     protected $guarded = ['id'];
-    protected $appends = ['stat'];
+    protected $appends = ['stat', 'full_name'];
 
     public function person()
     {
@@ -18,4 +18,11 @@ class Apply extends Model
 	{
 		return __("stat{$this->status}");
 	}
+
+    public function getFullNameAttribute()
+    {
+        $first_name = $this->person->first_name ?? '';
+        $last_name = $this->person->last_name ?? '';
+        return $first_name . ' '. $last_name;
+    }
 }

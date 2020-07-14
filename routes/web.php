@@ -7,6 +7,10 @@ Route::view('/', 'welcome')->name('welcome');
 Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
+// note and history
+Route::post('note', 'HistoryController@note')->name('note');
+Route::post('note/{history}/edit', 'HistoryController@update')->name('note.update');
+
 // general : user account management
 Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');

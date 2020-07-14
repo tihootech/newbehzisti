@@ -27,6 +27,11 @@ class Person extends Model
         }
     }
 
+    public function histories()
+    {
+        return $this->hasMany(History::class);
+    }
+
     public function make_fresh()
     {
         for ($i=1; $i <=3 ; $i++) {
