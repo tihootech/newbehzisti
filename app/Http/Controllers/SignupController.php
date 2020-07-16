@@ -107,8 +107,8 @@ class SignupController extends Controller
             'lifestyle' => Rule::in( defaults('lifestyle') ),
             'national_code' => ['required', new NationalCodeRule, 'unique:people,national_code,'.$id],
             'address' => 'required|string',
-            'postal_code' => 'required|string|digits:10',
-            'mobile' => 'required|string|digits:11|unique:people,mobile,'.$id,
+            'postal_code' => 'required|string|size:10',
+            'mobile' => 'required|string|size:11|unique:people,mobile,'.$id,
             'birth_date' => new PersianDateRule,
             'birth_certificate_number' => 'required|string',
             'reference' => 'nullable',
@@ -221,7 +221,7 @@ class SignupController extends Controller
         if ($type == 3) {
             $apply_data = $request->validate([
                 'workshop_name' => 'required|string',
-                'workshop_code' => 'required|string|digits:10',
+                'workshop_code' => 'required|string|size:10',
                 'license_type' => 'required|string',
                 'license_system' => 'required|string',
                 'plan_title' => 'required|string',
@@ -264,7 +264,7 @@ class SignupController extends Controller
             'city' => Rule::in( defaults('city') ),
             'national_code' => ['required', new NationalCodeRule, 'unique:organs,national_code'],
             'address' => 'required|string',
-            'postal_code' => 'required|string|digits:10',
+            'postal_code' => 'required|string|size:10',
             'phone' => 'required|string|unique:organs,phone',
             'birth_date' => new PersianDateRule,
             'educations' => Rule::in( defaults('education') ),
