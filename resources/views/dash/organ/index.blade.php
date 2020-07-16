@@ -107,8 +107,8 @@
 							<td> {{$organ->payment_amount}} </td>
 							<td> {{nf($organ->offered_payment)}} ریال </td>
 							<td> {{$organ->madadjus_insurance}} </td>
-							<td> {{$organ->uid}} </td>
 							<td> {{$organ->full_insurance}} </td>
+							<td> {{$organ->uid}} </td>
 							<td>
 								<form class="d-inline" action="{{route('organ.destroy', $organ)}}" method="post">
 									@method('DELETE')
