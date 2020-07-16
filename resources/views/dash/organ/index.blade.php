@@ -71,6 +71,7 @@
 						<th style="min-width:200px"> @lang('offered_payment') </th>
 						<th> @lang('madadjus_insurance') </th>
 						<th> @lang('full_insurance') </th>
+						<th> کدرهگیری </th>
 						<th colspan="2"> عملیات </th>
 					</tr>
 				</thead>
@@ -106,6 +107,7 @@
 							<td> {{$organ->payment_amount}} </td>
 							<td> {{nf($organ->offered_payment)}} ریال </td>
 							<td> {{$organ->madadjus_insurance}} </td>
+							<td> {{$organ->uid}} </td>
 							<td> {{$organ->full_insurance}} </td>
 							<td>
 								<form class="d-inline" action="{{route('organ.destroy', $organ)}}" method="post">
