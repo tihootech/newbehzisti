@@ -61,6 +61,7 @@
 
                 <th style="min-width:200px"> @lang('information') </th>
                 <th> تاریخ درخواست </th>
+                <th> کدرهگیری </th>
                 <th> عملیات </th>
             </tr>
         </thead>
@@ -136,6 +137,7 @@
 
                     <td data-content="{{$apply->information}}"> {{short($apply->information, 20)}} </td>
                     <td> {{date_picker_date($apply->created_at)}} </td>
+                    <td> {{$apply->uid}} </td>
                     <td>
                         @if ($imode)
                             <button type="button" class="btn btn-sm btn-outline-info">
