@@ -1,4 +1,4 @@
-<table class="table table-sm table-striped table-bordered">
+<table class="table table-sm table-striped table-bordered data-table">
     <thead>
         <tr>
             <th> # </th>

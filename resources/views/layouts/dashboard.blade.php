@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Main CSS-->
-        <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.css')}}?v=2.4" />
+        <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.css')}}?v=2.5" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/pdp.css')}}?v=2.4" />
         <!-- Font-icon css-->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -33,6 +33,8 @@
         <script src="{{asset("js/pdp.min.js")}}"></script>
         <script type="text/javascript" src="{{asset('dashboard/js/plugins/chart.js')}}"></script>
         <!-- Page specific javascripts-->
-        <script src="{{asset('dashboard/js/main.js')}}?v=2.4"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" charset="utf-8"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
+        <script src="{{asset('dashboard/js/main.js')}}?v=2.5"></script>
     </body>
 </html>

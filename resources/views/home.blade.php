@@ -22,27 +22,31 @@
             @if ($actions_count)
                 <div class="row justify-content-center">
                     @if (count($actions['job']))
-                        <div class="col-md-6">
-                            <h5 class="text-primary text-center my-3"> @lang('job_apply') </h5>
+                        <div class="col-md-8">
+                            <h4 class="text-primary text-center my-3"> @lang('job_apply') </h4>
                             @include('partials.apply_table', ['type' => 'job'])
+                            <hr class="col-12">
                         </div>
                     @endif
                     @if (count($actions['loan']))
-                        <div class="col-md-6">
-                            <h5 class="text-primary text-center my-3"> @lang('loan_apply') </h5>
+                        <div class="col-md-8">
+                            <h4 class="text-primary text-center my-3"> @lang('loan_apply') </h4>
                             @include('partials.apply_table', ['type' => 'loan'])
+                            <hr class="col-12">
                         </div>
                     @endif
                     @if (count($actions['insurance']))
-                        <div class="col-md-6">
-                            <h5 class="text-primary text-center my-3"> @lang('insurance_apply') </h5>
+                        <div class="col-md-8">
+                            <h4 class="text-primary text-center my-3"> @lang('insurance_apply') </h4>
                             @include('partials.apply_table', ['type' => 'insurance'])
+                            <hr class="col-12">
                         </div>
                     @endif
                     @if (count($actions['organ']))
-                        <div class="col-md-6">
-                            <h5 class="text-primary text-center my-3"> @lang('organ_apply') </h5>
+                        <div class="col-md-8">
+                            <h4 class="text-primary text-center my-3"> @lang('organ_apply') </h4>
                             @include('partials.apply_table', ['type' => 'organ'])
+                            <hr class="col-12">
                         </div>
                     @endif
                 </div>
