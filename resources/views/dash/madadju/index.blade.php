@@ -40,7 +40,9 @@
 
 		@include('partials.madadjus_table', ['list' => $applies, 'imode' => 0])
 
-		{{$applies->links()}}
+		<div class="table-responsive-lg">
+			{{$applies->links()}}
+		</div>
 
 	</div>
 @endsection

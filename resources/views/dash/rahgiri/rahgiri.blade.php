@@ -9,25 +9,27 @@
 
         <div class="row">
 
-			<div class="col-md-6">
+			<div class="col-md-6 mb-2">
 				<form class="row justify-content-center">
-		            <div class="col-md-6">
+		            <div class="col-md-6 form-group">
 		                <label for="c"> کدرهگیری </label>
 		                <input type="text" class="form-control" id="c" name="c" value="{{$request->c}}" autocomplete="off">
 		            </div>
-		            <div class="col-md-6 align-self-end">
+		            <div class="col-md-6 form-group align-self-end">
 		                <button type="submit" class="btn btn-primary btn-block"> جستجو بر اساس کدرهگیری </button>
 		            </div>
 		        </form>
 			</div>
 
-	        <div class="col-md-6">
+			<hr class="w-100 d-block d-md-none">
+
+	        <div class="col-md-6 mb-2">
 				<form class="row justify-content-center">
-		            <div class="col-md-6">
+		            <div class="col-md-6 form-group">
 		                <label for="n"> کدملی </label>
 		                <input type="text" class="form-control" id="n" name="n" value="{{$request->n}}" autocomplete="off">
 		            </div>
-		            <div class="col-md-6 align-self-end">
+		            <div class="col-md-6 form-group align-self-end">
 		                <button type="submit" class="btn btn-primary btn-block"> جستجو بر اساس کدملی </button>
 		            </div>
 		        </form>

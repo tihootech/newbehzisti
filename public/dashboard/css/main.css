@@ -15348,6 +15348,26 @@ input[type=number]::-webkit-inner-spin-button:after {
 
 
 /*******************************/
+/* Data table */
+/*******************************/
+
+.dataTables_filter input {
+    margin-right: 10px;
+}
+
+.dataTables_length select {
+    margin-left: 10px;
+}
+
+.dataTables_filter {
+    display: flex;
+}
+.dataTables_filter > label {
+    margin-right: auto;
+    min-width: 300px;
+}
+
+/*******************************/
 /* RTL */
 /*******************************/
 .custom-control-label::before, .custom-control-label::after {

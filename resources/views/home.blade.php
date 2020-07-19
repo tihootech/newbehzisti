@@ -10,7 +10,9 @@
         <div class="tile">
             <h4 class="text-center"> <i class="fa fa-list ml-1"></i> کارفرمایانی که نیاز به مددجو دارند </h4>
             <hr>
-            @include('partials.solicits_table')
+            <div class="table-responsive-lg">
+                @include('partials.solicits_table')
+            </div>
         </div>
     @endif
 
@@ -22,31 +24,39 @@
             @if ($actions_count)
                 <div class="row justify-content-center">
                     @if (count($actions['job']))
-                        <div class="col-md-8">
+                        <div class="col-md-12 col-lg-9">
                             <h4 class="text-primary text-center my-3"> @lang('job_apply') </h4>
-                            @include('partials.apply_table', ['type' => 'job'])
-                            <hr class="col-12">
+                            <div class="table-responsive-lg">
+                                @include('partials.apply_table', ['type' => 'job'])
+                            </div>
+                            <hr class="w-100">
                         </div>
                     @endif
                     @if (count($actions['loan']))
-                        <div class="col-md-8">
+                        <div class="col-md-12 col-lg-9">
                             <h4 class="text-primary text-center my-3"> @lang('loan_apply') </h4>
-                            @include('partials.apply_table', ['type' => 'loan'])
-                            <hr class="col-12">
+                            <div class="table-responsive-lg">
+                                @include('partials.apply_table', ['type' => 'loan'])
+                            </div>
+                            <hr class="w-100">
                         </div>
                     @endif
                     @if (count($actions['insurance']))
-                        <div class="col-md-8">
+                        <div class="col-md-12 col-lg-9">
                             <h4 class="text-primary text-center my-3"> @lang('insurance_apply') </h4>
-                            @include('partials.apply_table', ['type' => 'insurance'])
-                            <hr class="col-12">
+                            <div class="table-responsive-lg">
+                                @include('partials.apply_table', ['type' => 'insurance'])
+                            </div>
+                            <hr class="w-100">
                         </div>
                     @endif
                     @if (count($actions['organ']))
-                        <div class="col-md-8">
+                        <div class="col-md-12 col-lg-9">
                             <h4 class="text-primary text-center my-3"> @lang('organ_apply') </h4>
-                            @include('partials.apply_table', ['type' => 'organ'])
-                            <hr class="col-12">
+                            <div class="table-responsive-lg">
+                                @include('partials.apply_table', ['type' => 'organ'])
+                            </div>
+                            <hr class="w-100">
                         </div>
                     @endif
                 </div>

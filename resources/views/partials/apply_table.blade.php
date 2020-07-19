@@ -6,6 +6,7 @@
             <th> شهر </th>
             <th> تاریخ ایجاد </th>
             <th> تاریخ آخرین تغییر </th>
+            <th> کدرهگیری </th>
             <th> عملیات </th>
         </tr>
     </thead>
@@ -17,6 +18,7 @@
                 <td> {{$apply->city ?? $apply->person->city ?? '-'}} </td>
                 <td> {{date_picker_date($apply->created_at)}} </td>
                 <td> {{date_picker_date($apply->updated_at)}} </td>
+                <td> {{$apply->uid}} </td>
                 <td> <a href="#{{$type}}-modal-{{$apply->id}}" data-toggle="modal" class="btn btn-outline-primary btn-sm"> بررسی </a> </td>
             </tr>
         @endforeach
