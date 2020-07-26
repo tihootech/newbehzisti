@@ -56,7 +56,6 @@
                             <div class="table-responsive-lg">
                                 @include('partials.apply_table', ['type' => 'organ'])
                             </div>
-                            <hr class="w-100">
                         </div>
                     @endif
                 </div>

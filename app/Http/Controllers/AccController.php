@@ -13,6 +13,28 @@ class AccController extends Controller
 	public function __construct()
 	{
 		$this->middleware('auth');
+		$this->middleware('admins')->only(['index', 'admin_update']);
+	}
+
+	public function index()
+	{
+		$users = User::whereIn('type', ['user', 'organ']);
+		if (user('type') == 'expert') {
+			$user_ids = [];
+			$users = $user->whereIn('id', $user_ids);
+		}
+		$users = $users->get();
+		return view('dash.acc.index', compact('users'));
+	}
+
+	public function admin_update(User $user, Request $request)
+	{
+		if (!$request->newpass) {
+			return back()->withError('این شخص کد ملی ندارد.');
+		}
+		$user->password = bcrypt($request->newpass);
+		$user->save();
+		return back()->withMessage(__('رمزعبور این شخص ریست شد.'));
 	}
 
     public function edit()

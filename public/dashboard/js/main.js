@@ -83,6 +83,27 @@
 		});
 	});
 
+	// change-pass
+	$('.change-pass').click(function(){
+		var target = $(this).parents('form');
+		swal({
+			title: "آیا مطمئن هستید؟",
+			text: "با ریست کردن، رمزعبور شخص کدملی او میشود.",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonText: "بله",
+			cancelButtonText: "لغو",
+			closeOnConfirm: false,
+			closeOnCancel: false
+		}, function(isConfirm) {
+			if (isConfirm) {
+				target.submit();
+			} else {
+				swal("عملیات لغو شد.", "رمزعبور ریست نشد.", "error");
+			}
+		});
+	});
+
 	// data table
 	$('.data-table').DataTable({
 		language: {

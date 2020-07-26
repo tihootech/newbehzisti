@@ -24,6 +24,12 @@
 
 		@admins
 			<li>
+				<a class="app-menu__item @if(rn() == 'user.index') active @endif" href="{{route('user.index')}}">
+					<i class="app-menu__icon fa fa-users"></i><span class="app-menu__label"> مدیریت حساب های کاربری </span>
+				</a>
+			</li>
+
+			<li>
 				<a class="app-menu__item @if(rn() == 'organ.index') active @endif" href="{{route('organ.index')}}">
 					<i class="app-menu__icon fa fa-list"></i><span class="app-menu__label"> لیست کارفرمایان </span>
 				</a>

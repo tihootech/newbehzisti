@@ -14,6 +14,8 @@ Route::post('note/{history}/edit', 'HistoryController@update')->name('note.updat
 // general : user account management
 Route::get('acc', 'AccController@edit')->name('acc');
 Route::put('acc', 'AccController@update')->name('acc_update');
+Route::get('users', 'AccController@index')->name('user.index');
+Route::put('users/{user}', 'AccController@admin_update')->name('user.admin_update');
 
 // signups & madadjus
 Route::get('ثبت-نام-کارفرما', 'SignupController@organ_form')->name('organ.signup');
