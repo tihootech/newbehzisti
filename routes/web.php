@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+die('این وبسایت موقتا از دسترس خارج شده است.');
+
 // defaults
 Route::view('/', 'welcome')->name('welcome');
 Auth::routes(['register' => false]);
