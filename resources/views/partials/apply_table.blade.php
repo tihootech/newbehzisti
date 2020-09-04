@@ -7,7 +7,7 @@
             <th> تاریخ ایجاد </th>
             <th> تاریخ آخرین تغییر </th>
             <th> کدرهگیری </th>
-            <th> عملیات </th>
+            <th colspan="2"> عملیات </th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +19,7 @@
                 <td> {{date_picker_date($apply->created_at)}} </td>
                 <td> {{date_picker_date($apply->updated_at)}} </td>
                 <td> {{$apply->uid}} </td>
+                <td> <a href="{{route('madadju.edit', [$type, $apply->id])}}" class="btn btn-outline-success btn-sm"> ویرایش </a> </td>
                 <td> <a href="#{{$type}}-modal-{{$apply->id}}" data-toggle="modal" class="btn btn-outline-primary btn-sm"> بررسی </a> </td>
             </tr>
         @endforeach

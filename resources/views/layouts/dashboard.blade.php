@@ -35,6 +35,7 @@
         <!-- Page specific javascripts-->
         <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" charset="utf-8"></script>
         <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
+        <script src="{{ asset('js/main.js') }}?v=2.5"></script>
         <script src="{{asset('dashboard/js/main.js')}}?v=2.5"></script>
     </body>
 </html>

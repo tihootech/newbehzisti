@@ -27,6 +27,8 @@ Route::get('madadjus/{type}', 'MadadjuController@index')->name('madadjus');
 Route::delete('apply/{type}/{id}', 'MadadjuController@destroy')->name('apply.destroy');
 Route::post('apply/accept/{type}/{id}', 'SignupController@accept')->name('apply.accept');
 Route::post('apply/reject/{type}/{id}', 'SignupController@reject')->name('apply.reject');
+Route::get('madadju/{type}/{id}/edit', 'MadadjuController@edit')->name('madadju.edit');
+Route::put('madadju/{type}/{id}/update', 'MadadjuController@update')->name('madadju.update');
 
 
 // other
